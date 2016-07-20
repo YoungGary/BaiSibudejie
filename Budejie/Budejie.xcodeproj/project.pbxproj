@@ -20,6 +20,7 @@
 		6F88B7301D3FE4A8002EF6C1 /* GYPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B72F1D3FE4A8002EF6C1 /* GYPublishViewController.m */; };
 		6F88B7331D3FE586002EF6C1 /* GYNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7321D3FE586002EF6C1 /* GYNaviController.m */; };
 		6F88B7361D3FE75A002EF6C1 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7351D3FE75A002EF6C1 /* UIImage+Image.m */; };
+		6F88B7391D3FF5FB002EF6C1 /* GYTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7381D3FF5FB002EF6C1 /* GYTabbar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		6F88B7321D3FE586002EF6C1 /* GYNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYNaviController.m; sourceTree = "<group>"; };
 		6F88B7341D3FE75A002EF6C1 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		6F88B7351D3FE75A002EF6C1 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		6F88B7371D3FF5FB002EF6C1 /* GYTabbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTabbar.h; sourceTree = "<group>"; };
+		6F88B7381D3FF5FB002EF6C1 /* GYTabbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTabbar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +317,8 @@
 				6F88B71A1D3FE2B1002EF6C1 /* GYTabbarController.m */,
 				6F88B7311D3FE586002EF6C1 /* GYNaviController.h */,
 				6F88B7321D3FE586002EF6C1 /* GYNaviController.m */,
+				6F88B7371D3FF5FB002EF6C1 /* GYTabbar.h */,
+				6F88B7381D3FF5FB002EF6C1 /* GYTabbar.m */,
 			);
 			name = "mainTabbar&Navi";
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
+				6F88B7391D3FF5FB002EF6C1 /* GYTabbar.m in Sources */,
 				6F88B7331D3FE586002EF6C1 /* GYNaviController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

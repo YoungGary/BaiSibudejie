@@ -14,6 +14,7 @@
 #import "GYMeViewController.h"
 #import "GYNaviController.h"
 #import "UIImage+Image.h"
+#import "GYTabbar.h"
 @implementation GYTabbarController
 
 +(void)load{
@@ -29,21 +30,35 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self addChildVC];
+    [self addTabbar ];
+}
+
+//自定义tababr
+-(void)addTabbar{
+    GYTabbar *tabbar   = [[GYTabbar alloc]init];
+    [self setValue:tabbar forKey:@"tabBar"];
 }
 
 -(void)addChildVC{
+    //精华
     GYEssenceController *essence = [[GYEssenceController alloc]init];
     [self addOneChildViewControllerWithVC:essence WithImageName:@"tabBar_essence_icon" WithSelectedImageName:@"tabBar_essence_click_icon" WithTitle:@"精华"];
-    
+    //新帖
     GYNewViewController *new = [[GYNewViewController alloc]init];
     [self addOneChildViewControllerWithVC:new WithImageName:@"tabBar_new_icon" WithSelectedImageName:@"tabBar_new_click_icon" WithTitle:@"新帖"];
-    
-    GYPublishViewController *publish = [[GYPublishViewController alloc]init];
-    [self addOneChildViewControllerWithVC:publish WithImageName:@"tabBar_publish_icon" WithSelectedImageName:@"tabBar_publish_click_icon" WithTitle:@""];
-    
+//    //发布
+//    GYPublishViewController *publish = [[GYPublishViewController alloc]init];
+//    UIImage *image = [UIImage imageWithOriginalImageNamed:@"tabBar_publish_icon" ];
+//    UIImage *selImage = [UIImage imageWithOriginalImageNamed:@"tabBar_publish_click_icon"];
+//    publish.tabBarItem.selectedImage = selImage;
+//    publish.tabBarItem.image = image;
+//    publish.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+//    [self addChildViewController:publish];
+
+    ////关注
     GYFriendViewController *friend = [[GYFriendViewController alloc]init];
    [self addOneChildViewControllerWithVC:friend WithImageName:@"tabBar_friendTrends_icon" WithSelectedImageName:@"tabBar_friendTrends_click_icon" WithTitle:@"关注"];
-    
+    //我
     GYMeViewController *me = [[GYMeViewController alloc]init];
     [self addOneChildViewControllerWithVC:me WithImageName:@"tabBar_me_icon" WithSelectedImageName:@"tabBar_me_click_icon" WithTitle:@"我"];
 }
