@@ -10,4 +10,13 @@
 
 @implementation GYNaviController
 
++(void)load{
+    UINavigationBar *bar  = [UINavigationBar appearanceWhenContainedIn:self, nil];
+    NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+    attr[NSFontAttributeName] = [UIFont systemFontOfSize:20];
+    [bar setTitleTextAttributes:attr ];
+    //导航条背景图片
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+}
+
 @end

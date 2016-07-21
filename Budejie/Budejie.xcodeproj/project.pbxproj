@@ -23,6 +23,7 @@
 		6F88B7391D3FF5FB002EF6C1 /* GYTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7381D3FF5FB002EF6C1 /* GYTabbar.m */; };
 		6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E11D4129AE00AB155C /* UIView+Frame.m */; };
 		6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */; };
+		6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729FA1D41460000AB155C /* GYSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		6FE729E51D412CAF00AB155C /* Budejie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Budejie.pch; sourceTree = "<group>"; };
 		6FE729E61D41388100AB155C /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		6FE729F91D41460000AB155C /* GYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSettingViewController.h; sourceTree = "<group>"; };
+		6FE729FA1D41460000AB155C /* GYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 		6F88B7021D3FE222002EF6C1 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				6FE729E91D41441500AB155C /* setting设置 */,
 				6F88B7031D3FE222002EF6C1 /* essence(精华) */,
 				6F88B70F1D3FE222002EF6C1 /* New(新帖) */,
 				6F88B7131D3FE222002EF6C1 /* Publish(发布) */,
@@ -360,6 +364,39 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		6FE729E91D41441500AB155C /* setting设置 */ = {
+			isa = PBXGroup;
+			children = (
+				6FE729EC1D41442E00AB155C /* Model */,
+				6FE729EB1D41442C00AB155C /* View */,
+				6FE729EA1D41442900AB155C /* Controller */,
+			);
+			name = "setting设置";
+			sourceTree = "<group>";
+		};
+		6FE729EA1D41442900AB155C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6FE729F91D41460000AB155C /* GYSettingViewController.h */,
+				6FE729FA1D41460000AB155C /* GYSettingViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6FE729EB1D41442C00AB155C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6FE729EC1D41442E00AB155C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,6 +504,7 @@
 				6F88B7301D3FE4A8002EF6C1 /* GYPublishViewController.m in Sources */,
 				6F5A2BAE1D3E9BE8009885CA /* main.m in Sources */,
 				6F88B7241D3FE3D2002EF6C1 /* GYFriendViewController.m in Sources */,
+				6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */,
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
