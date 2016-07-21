@@ -10,4 +10,27 @@
 
 @implementation GYNewViewController
 
+
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self setupNaviBar];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+}
+
+-(void)setupNaviBar{
+    UIBarButtonItem *left = [UIBarButtonItem setupBarButtonItemWithImage:[UIImage imageNamed:@"MainTagSubIcon"] withHighlightedImage:[UIImage imageNamed:@"MainTagSubIconClick"] withTarget:self action:@selector(left)];
+    self.navigationItem.leftBarButtonItem = left;
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+}
+
+-(void)left{
+    
+}
+
+
+
+
+
+
 @end
