@@ -10,3 +10,13 @@
 #import "UIImage+Image.h"
 #import "UIView+Frame.h"
 #import "UIBarButtonItem+Extension.h"
+
+//屏幕适配
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define iPhone6P (ScreenHeight == 736)
+#define iPhone6 (ScreenHeight == 667)
+#define iPhone5 (ScreenHeight == 568)
+#define iPhone4 (ScreenHeight == 480)
+

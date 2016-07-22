@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GYTabbarController.h"
+#import "GYADViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,8 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    GYTabbarController *tab = [[GYTabbarController alloc]init];
-    self.window.rootViewController  = tab;
+    GYADViewController *ad = [[GYADViewController alloc]init];
+    self.window.rootViewController  = ad;
     [self.window makeKeyAndVisible];
     return YES;
 }
