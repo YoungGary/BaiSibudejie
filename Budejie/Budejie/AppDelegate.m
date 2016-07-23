@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GYADViewController.h"
+#import "AFNetWorking.h"
 @interface AppDelegate ()
 
 @end

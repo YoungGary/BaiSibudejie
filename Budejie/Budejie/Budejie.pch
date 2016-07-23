@@ -20,3 +20,4 @@
 #define iPhone5 (ScreenHeight == 568)
 #define iPhone4 (ScreenHeight == 480)
 
+#define function  NSLog(@"%s",__func__);
