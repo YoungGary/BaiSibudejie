@@ -7,7 +7,7 @@
 //
 
 #import "GYNewViewController.h"
-
+#import "GYSubTagViewController.h"
 @implementation GYNewViewController
 
 
@@ -25,8 +25,18 @@
 }
 
 -(void)left{
-    
+    GYSubTagViewController *tag = [[GYSubTagViewController alloc]init];
+    tag.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:tag animated:YES];
 }
+
+
+
+
+
+
+
+
 
 
 

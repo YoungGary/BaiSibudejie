@@ -12,6 +12,10 @@
 		6F5A2BB91D3E9BE8009885CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F5A2BB81D3E9BE8009885CA /* Assets.xcassets */; };
 		6F5A2BBC1D3E9BE8009885CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5A2BBA1D3E9BE8009885CA /* LaunchScreen.storyboard */; };
 		6F5A2BC71D3E9BE8009885CA /* BudejieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A2BC61D3E9BE8009885CA /* BudejieUITests.m */; };
+		6F659CF81D4510DB0099D760 /* GYSubTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F659CF71D4510DB0099D760 /* GYSubTagViewController.m */; };
+		6F659CFB1D4511780099D760 /* GYSubTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F659CFA1D4511780099D760 /* GYSubTagModel.m */; };
+		6F659CFF1D45118D0099D760 /* GYTagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F659CFD1D45118D0099D760 /* GYTagTableViewCell.m */; };
+		6F659D001D45118D0099D760 /* GYTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F659CFE1D45118D0099D760 /* GYTagTableViewCell.xib */; };
 		6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B71A1D3FE2B1002EF6C1 /* GYTabbarController.m */; };
 		6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7201D3FE3C0002EF6C1 /* GYEssenceController.m */; };
 		6F88B7241D3FE3D2002EF6C1 /* GYFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B7231D3FE3D2002EF6C1 /* GYFriendViewController.m */; };
@@ -60,6 +64,13 @@
 		6F5A2BC21D3E9BE8009885CA /* BudejieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BudejieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5A2BC61D3E9BE8009885CA /* BudejieUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BudejieUITests.m; sourceTree = "<group>"; };
 		6F5A2BC81D3E9BE8009885CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F659CF61D4510DB0099D760 /* GYSubTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSubTagViewController.h; sourceTree = "<group>"; };
+		6F659CF71D4510DB0099D760 /* GYSubTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSubTagViewController.m; sourceTree = "<group>"; };
+		6F659CF91D4511780099D760 /* GYSubTagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSubTagModel.h; sourceTree = "<group>"; };
+		6F659CFA1D4511780099D760 /* GYSubTagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSubTagModel.m; sourceTree = "<group>"; };
+		6F659CFC1D45118D0099D760 /* GYTagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTagTableViewCell.h; sourceTree = "<group>"; };
+		6F659CFD1D45118D0099D760 /* GYTagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTagTableViewCell.m; sourceTree = "<group>"; };
+		6F659CFE1D45118D0099D760 /* GYTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYTagTableViewCell.xib; sourceTree = "<group>"; };
 		6F88B7191D3FE2B1002EF6C1 /* GYTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTabbarController.h; sourceTree = "<group>"; };
 		6F88B71A1D3FE2B1002EF6C1 /* GYTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTabbarController.m; sourceTree = "<group>"; };
 		6F88B71F1D3FE3C0002EF6C1 /* GYEssenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYEssenceController.h; sourceTree = "<group>"; };
@@ -298,6 +309,8 @@
 			children = (
 				6F88B72B1D3FE496002EF6C1 /* GYNewViewController.h */,
 				6F88B72C1D3FE496002EF6C1 /* GYNewViewController.m */,
+				6F659CF61D4510DB0099D760 /* GYSubTagViewController.h */,
+				6F659CF71D4510DB0099D760 /* GYSubTagViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +318,8 @@
 		6F88B7111D3FE222002EF6C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F659CF91D4511780099D760 /* GYSubTagModel.h */,
+				6F659CFA1D4511780099D760 /* GYSubTagModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +327,9 @@
 		6F88B7121D3FE222002EF6C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6F659CFC1D45118D0099D760 /* GYTagTableViewCell.h */,
+				6F659CFD1D45118D0099D760 /* GYTagTableViewCell.m */,
+				6F659CFE1D45118D0099D760 /* GYTagTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +604,7 @@
 				6F96DF821D428F7B0022F07A /* LaunchImage-700@2x.png in Resources */,
 				6F96DF841D428F7B0022F07A /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				6F96DF801D428F7B0022F07A /* LaunchImage-568h@2x.png in Resources */,
+				6F659D001D45118D0099D760 /* GYTagTableViewCell.xib in Resources */,
 				6F96DF831D428F7B0022F07A /* LaunchImage-800-667h@2x.png in Resources */,
 				6F96DF771D428DB40022F07A /* GYADViewController.xib in Resources */,
 				6F96DF861D428F7B0022F07A /* LaunchImage@2x.png in Resources */,
@@ -654,12 +673,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F659CF81D4510DB0099D760 /* GYSubTagViewController.m in Sources */,
 				6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */,
 				6F88B72A1D3FE46B002EF6C1 /* GYMeViewController.m in Sources */,
 				6F88B7361D3FE75A002EF6C1 /* UIImage+Image.m in Sources */,
 				6F5A2BB11D3E9BE8009885CA /* AppDelegate.m in Sources */,
+				6F659CFB1D4511780099D760 /* GYSubTagModel.m in Sources */,
 				6F88B7301D3FE4A8002EF6C1 /* GYPublishViewController.m in Sources */,
 				6F5A2BAE1D3E9BE8009885CA /* main.m in Sources */,
+				6F659CFF1D45118D0099D760 /* GYTagTableViewCell.m in Sources */,
 				6F88B7241D3FE3D2002EF6C1 /* GYFriendViewController.m in Sources */,
 				6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */,
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
