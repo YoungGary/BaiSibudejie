@@ -10,9 +10,9 @@
 #import "GYSubTagModel.h"
 #import "GYTagTableViewCell.h"
 
-#import "AFNetWorking.h"
+#import <AFNetworking.h>
 #import <MJExtension/MJExtension.h>
-
+#import <SVProgressHUD-0.8.1/SVProgressHUD.h>
 
 static NSString *const identifier= @"cell";
 
@@ -29,6 +29,11 @@ static NSString *const identifier= @"cell";
     //register cell from xib
     [self.tableView registerNib:[UINib nibWithNibName:@"GYTagTableViewCell" bundle:nil] forCellReuseIdentifier:identifier];
     self.title = @"推荐标签";
+   // self.tableView.separatorInset = UIEdgeInsetsZero;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   self.tableView.backgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:221/255.0 alpha:1];
+    [SVProgressHUD showWithStatus:@"正在加载中"];
+    
 }
 
 -(void)loadDataFromInternet{
@@ -39,13 +44,14 @@ static NSString *const identifier= @"cell";
     dict[@"action"]=@"sub";
     dict[@"c"]=@"topic";
     [manager GET:baseUrl parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray * _Nullable responseObject) {
+        [SVProgressHUD dismiss];
        // NSLog(@"%@",responseObject);
       _dataArray =   [GYSubTagModel mj_objectArrayWithKeyValuesArray:responseObject];
         [self.tableView reloadData];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -59,6 +65,7 @@ static NSString *const identifier= @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GYTagTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     GYSubTagModel *model = self.dataArray[indexPath.row];
     cell.model = model;
     return cell;

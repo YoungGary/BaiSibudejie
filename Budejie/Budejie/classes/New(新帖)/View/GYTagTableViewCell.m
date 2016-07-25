@@ -37,7 +37,10 @@
 }
 
 
-
+-(void)setFrame:(CGRect)frame{
+    frame.size.height -=1;
+    [super setFrame:frame];
+}
 
 
 - (void)awakeFromNib {
@@ -45,6 +48,7 @@
     // Initialization code
     _imageV.layer.cornerRadius = 30;
     _imageV.layer.masksToBounds = YES;
+    self.layoutMargins = UIEdgeInsetsZero;//分割线
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
