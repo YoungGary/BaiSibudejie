@@ -7,18 +7,23 @@
 //
 
 #import "GYFriendViewController.h"
-
+#import "GYLoginViewController.h"
 @implementation GYFriendViewController
 
 
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    
     [self setupNaviBar];
+    
 }
 
 
+- (IBAction)didClickLoginButton:(id)sender {
+    GYLoginViewController *login= [[GYLoginViewController alloc]init];
+    [self presentViewController:login animated:YES completion:nil];
+}
 
 
 -(void)setupNaviBar{

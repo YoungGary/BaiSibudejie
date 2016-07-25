@@ -35,6 +35,9 @@
 		6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F96DF7E1D428F7B0022F07A /* LaunchImage.png */; };
 		6F96DF861D428F7B0022F07A /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F96DF7F1D428F7B0022F07A /* LaunchImage@2x.png */; };
 		6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98F9141D43C58C007B5C7B /* GYADModel.m */; };
+		6FCE9E641D46777600F2BC0D /* GYFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */; };
+		6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */; };
+		6FCE9E691D467E7C00F2BC0D /* GYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */; };
 		6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E11D4129AE00AB155C /* UIView+Frame.m */; };
 		6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */; };
 		6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729FA1D41460000AB155C /* GYSettingViewController.m */; };
@@ -101,6 +104,10 @@
 		6F96DF7F1D428F7B0022F07A /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		6F98F9131D43C58C007B5C7B /* GYADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYADModel.h; sourceTree = "<group>"; };
 		6F98F9141D43C58C007B5C7B /* GYADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYADModel.m; sourceTree = "<group>"; };
+		6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYFriendViewController.xib; sourceTree = "<group>"; };
+		6FCE9E651D467E7C00F2BC0D /* GYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginViewController.h; sourceTree = "<group>"; };
+		6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginViewController.m; sourceTree = "<group>"; };
+		6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYLoginViewController.xib; sourceTree = "<group>"; };
 		6FE729E01D4129AE00AB155C /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		6FE729E11D4129AE00AB155C /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		6FE729E51D412CAF00AB155C /* Budejie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Budejie.pch; sourceTree = "<group>"; };
@@ -243,6 +250,10 @@
 			children = (
 				6F88B7221D3FE3D2002EF6C1 /* GYFriendViewController.h */,
 				6F88B7231D3FE3D2002EF6C1 /* GYFriendViewController.m */,
+				6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */,
+				6FCE9E651D467E7C00F2BC0D /* GYLoginViewController.h */,
+				6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */,
+				6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,8 +608,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FCE9E691D467E7C00F2BC0D /* GYLoginViewController.xib in Resources */,
 				6F5A2BBC1D3E9BE8009885CA /* LaunchScreen.storyboard in Resources */,
 				6F96DF811D428F7B0022F07A /* LaunchImage-700-568h@2x.png in Resources */,
+				6FCE9E641D46777600F2BC0D /* GYFriendViewController.xib in Resources */,
 				6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */,
 				6F5A2BB91D3E9BE8009885CA /* Assets.xcassets in Resources */,
 				6F96DF821D428F7B0022F07A /* LaunchImage-700@2x.png in Resources */,
@@ -687,6 +700,7 @@
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
+				6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */,
 				6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */,
 				6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
