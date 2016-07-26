@@ -3,10 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYLoginViewController">
             <connections>
+                <outlet property="bottomView" destination="SsA-no-iSQ" id="qIG-8v-GJa"/>
+                <outlet property="leadCons" destination="nOs-bD-b4G" id="8qi-WS-WTh"/>
                 <outlet property="loginView" destination="LTf-FK-frQ" id="xXF-7c-IMH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -57,15 +60,15 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTf-FK-frQ" userLabel="mid">
-                    <rect key="frame" x="0.0" y="100" width="375" height="220"/>
+                    <rect key="frame" x="0.0" y="100" width="750" height="220"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="C2B-M5-o0W"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsA-no-iSQ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsA-no-iSQ" userLabel="bottom">
                     <rect key="frame" x="0.0" y="527" width="375" height="120"/>
-                    <color key="backgroundColor" red="0.61273296200000005" green="1" blue="0.64086112529999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="eVe-Uc-CBB"/>
                     </constraints>
@@ -86,8 +89,14 @@
                 <constraint firstAttribute="trailing" secondItem="1NF-JX-Ju3" secondAttribute="trailing" id="sAh-J5-aCY"/>
                 <constraint firstItem="1NF-JX-Ju3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="tXk-qh-qUu"/>
                 <constraint firstAttribute="bottom" secondItem="SsA-no-iSQ" secondAttribute="bottom" constant="20" id="uGo-bh-2jH"/>
+                <constraint firstItem="LTf-FK-frQ" firstAttribute="width" secondItem="T1x-EZ-0Nk" secondAttribute="width" multiplier="2" id="w1z-ZL-OX8"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="JsM-H1-4S3"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="278.5" y="387.5"/>
         </view>
     </objects>

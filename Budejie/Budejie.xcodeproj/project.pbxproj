@@ -43,6 +43,9 @@
 		6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729FA1D41460000AB155C /* GYSettingViewController.m */; };
 		6FF3CAED1D47C27C00F35AF8 /* GYLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */; };
 		6FF3CAEF1D47C29800F35AF8 /* GYLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */; };
+		6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3CAF11D47D5EA00F35AF8 /* GYFastLoginView.m */; };
+		6FF3CAF41D47D5F400F35AF8 /* GYFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FF3CAF31D47D5F400F35AF8 /* GYFastLoginView.xib */; };
+		6FF3CAF71D47DBA100F35AF8 /* GYLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3CAF61D47DBA100F35AF8 /* GYLoginButton.m */; };
 		9EFE8383CB430B97F8DC3829 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE59DCA28E02253A1FA6C67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +123,11 @@
 		6FF3CAEB1D47C27C00F35AF8 /* GYLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginView.h; sourceTree = "<group>"; };
 		6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginView.m; sourceTree = "<group>"; };
 		6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYLoginView.xib; sourceTree = "<group>"; };
+		6FF3CAF01D47D5EA00F35AF8 /* GYFastLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYFastLoginView.h; sourceTree = "<group>"; };
+		6FF3CAF11D47D5EA00F35AF8 /* GYFastLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYFastLoginView.m; sourceTree = "<group>"; };
+		6FF3CAF31D47D5F400F35AF8 /* GYFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYFastLoginView.xib; sourceTree = "<group>"; };
+		6FF3CAF51D47DBA100F35AF8 /* GYLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginButton.h; sourceTree = "<group>"; };
+		6FF3CAF61D47DBA100F35AF8 /* GYLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginButton.m; sourceTree = "<group>"; };
 		904B923E93AB971CFD6DBD5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +284,11 @@
 				6FF3CAEB1D47C27C00F35AF8 /* GYLoginView.h */,
 				6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */,
 				6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */,
+				6FF3CAF01D47D5EA00F35AF8 /* GYFastLoginView.h */,
+				6FF3CAF11D47D5EA00F35AF8 /* GYFastLoginView.m */,
+				6FF3CAF31D47D5F400F35AF8 /* GYFastLoginView.xib */,
+				6FF3CAF51D47DBA100F35AF8 /* GYLoginButton.h */,
+				6FF3CAF61D47DBA100F35AF8 /* GYLoginButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -623,6 +636,7 @@
 				6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */,
 				6F5A2BB91D3E9BE8009885CA /* Assets.xcassets in Resources */,
 				6F96DF821D428F7B0022F07A /* LaunchImage-700@2x.png in Resources */,
+				6FF3CAF41D47D5F400F35AF8 /* GYFastLoginView.xib in Resources */,
 				6F96DF841D428F7B0022F07A /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				6F96DF801D428F7B0022F07A /* LaunchImage-568h@2x.png in Resources */,
 				6F659D001D45118D0099D760 /* GYTagTableViewCell.xib in Resources */,
@@ -708,11 +722,13 @@
 				6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */,
 				6FF3CAED1D47C27C00F35AF8 /* GYLoginView.m in Sources */,
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
+				6FF3CAF71D47DBA100F35AF8 /* GYLoginButton.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
 				6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */,
 				6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */,
 				6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */,
+				6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
 				6F88B7391D3FF5FB002EF6C1 /* GYTabbar.m in Sources */,
 				6F88B7331D3FE586002EF6C1 /* GYNaviController.m in Sources */,
