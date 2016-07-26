@@ -10,4 +10,7 @@
 
 @interface GYLoginViewController : UIViewController
 
+
+
+
 @end

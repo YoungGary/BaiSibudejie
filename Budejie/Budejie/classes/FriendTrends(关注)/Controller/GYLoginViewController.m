@@ -7,8 +7,9 @@
 //
 
 #import "GYLoginViewController.h"
-
+#import "GYLoginView.h"
 @interface GYLoginViewController ()
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end
 
@@ -16,13 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+//    GYLoginView *loginView = [GYLoginView loginView];
+//    [self.loginView addSubview:loginView];
+    GYLoginView *RegisiterView = [GYLoginView registerView];
+    [self.loginView addSubview:RegisiterView];
 }
+
+
+
 - (IBAction)closeButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 - (IBAction)registerButoon:(UIButton *)sender {
-    sender.selected = !sender.selected  ;
+    sender.selected = !sender.selected ;
 }
 
 - (void)didReceiveMemoryWarning {

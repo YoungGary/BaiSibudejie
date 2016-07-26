@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GYLoginViewController">
             <connections>
+                <outlet property="loginView" destination="LTf-FK-frQ" id="xXF-7c-IMH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,9 +56,9 @@
                         <constraint firstItem="GKi-2s-4w0" firstAttribute="leading" secondItem="1NF-JX-Ju3" secondAttribute="leading" constant="10" id="r8E-wJ-0hj"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTf-FK-frQ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTf-FK-frQ" userLabel="mid">
                     <rect key="frame" x="0.0" y="100" width="375" height="220"/>
-                    <color key="backgroundColor" red="0.84665969870000002" green="0.77866861040000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="C2B-M5-o0W"/>
                     </constraints>

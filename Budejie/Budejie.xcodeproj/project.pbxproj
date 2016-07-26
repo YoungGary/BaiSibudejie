@@ -41,6 +41,8 @@
 		6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E11D4129AE00AB155C /* UIView+Frame.m */; };
 		6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */; };
 		6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729FA1D41460000AB155C /* GYSettingViewController.m */; };
+		6FF3CAED1D47C27C00F35AF8 /* GYLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */; };
+		6FF3CAEF1D47C29800F35AF8 /* GYLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */; };
 		9EFE8383CB430B97F8DC3829 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE59DCA28E02253A1FA6C67 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,9 @@
 		6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		6FE729F91D41460000AB155C /* GYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSettingViewController.h; sourceTree = "<group>"; };
 		6FE729FA1D41460000AB155C /* GYSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSettingViewController.m; sourceTree = "<group>"; };
+		6FF3CAEB1D47C27C00F35AF8 /* GYLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginView.h; sourceTree = "<group>"; };
+		6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginView.m; sourceTree = "<group>"; };
+		6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYLoginView.xib; sourceTree = "<group>"; };
 		904B923E93AB971CFD6DBD5C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -268,6 +273,9 @@
 		6F88B70A1D3FE222002EF6C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6FF3CAEB1D47C27C00F35AF8 /* GYLoginView.h */,
+				6FF3CAEC1D47C27C00F35AF8 /* GYLoginView.m */,
+				6FF3CAEE1D47C29800F35AF8 /* GYLoginView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,6 +628,7 @@
 				6F659D001D45118D0099D760 /* GYTagTableViewCell.xib in Resources */,
 				6F96DF831D428F7B0022F07A /* LaunchImage-800-667h@2x.png in Resources */,
 				6F96DF771D428DB40022F07A /* GYADViewController.xib in Resources */,
+				6FF3CAEF1D47C29800F35AF8 /* GYLoginView.xib in Resources */,
 				6F96DF861D428F7B0022F07A /* LaunchImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +706,7 @@
 				6F659CFF1D45118D0099D760 /* GYTagTableViewCell.m in Sources */,
 				6F88B7241D3FE3D2002EF6C1 /* GYFriendViewController.m in Sources */,
 				6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */,
+				6FF3CAED1D47C27C00F35AF8 /* GYLoginView.m in Sources */,
 				6F88B72D1D3FE496002EF6C1 /* GYNewViewController.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
