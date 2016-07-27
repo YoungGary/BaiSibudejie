@@ -16,19 +16,19 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_rgister_textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="J8O-W1-BsI">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="92"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-4w-luz" userLabel="username">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spx-4T-rua" userLabel="password" customClass="GYLoginField">
+                            <rect key="frame" x="0.0" y="46" width="266" height="46"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-4w-luz" userLabel="username" customClass="GYLoginField">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="266" id="WIs-8k-iW5"/>
                                 <constraint firstAttribute="height" constant="46" id="XFk-h4-M2f"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spx-4T-rua" userLabel="password">
-                            <rect key="frame" x="0.0" y="46" width="266" height="46"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -79,7 +79,7 @@
             <connections>
                 <outlet property="loginButton" destination="fxR-Tv-lSJ" id="otO-tq-1Vm"/>
             </connections>
-            <point key="canvasLocation" x="581.5" y="313"/>
+            <point key="canvasLocation" x="280.5" y="294"/>
         </view>
         <view contentMode="scaleToFill" id="RWl-rM-TOa" customClass="GYLoginView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -90,19 +90,19 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_rgister_textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-j9-vYE">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="92"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-7x-AbB" userLabel="username">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-mb-rps" userLabel="password" customClass="GYLoginField">
+                            <rect key="frame" x="0.0" y="46" width="266" height="46"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-7x-AbB" userLabel="username" customClass="GYLoginField">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="266" id="B7q-mz-YQd"/>
                                 <constraint firstAttribute="height" constant="46" id="iSU-Bb-CuY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-mb-rps" userLabel="password">
-                            <rect key="frame" x="0.0" y="46" width="266" height="46"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>

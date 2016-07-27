@@ -59,7 +59,8 @@
     GYFriendViewController *friend = [[GYFriendViewController alloc]init];
    [self addOneChildViewControllerWithVC:friend WithImageName:@"tabBar_friendTrends_icon" WithSelectedImageName:@"tabBar_friendTrends_click_icon" WithTitle:@"关注"];
     //我
-    GYMeViewController *me = [[GYMeViewController alloc]init];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"GYMeViewController" bundle:nil];
+    GYMeViewController *me = [storyBoard instantiateInitialViewController];
     [self addOneChildViewControllerWithVC:me WithImageName:@"tabBar_me_icon" WithSelectedImageName:@"tabBar_me_click_icon" WithTitle:@"我"];
 }
 
