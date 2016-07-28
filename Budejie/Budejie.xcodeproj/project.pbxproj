@@ -35,6 +35,7 @@
 		6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F96DF7E1D428F7B0022F07A /* LaunchImage.png */; };
 		6F96DF861D428F7B0022F07A /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F96DF7F1D428F7B0022F07A /* LaunchImage@2x.png */; };
 		6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F98F9141D43C58C007B5C7B /* GYADModel.m */; };
+		6F9966571D4A5B860010FBBC /* GYMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9966561D4A5B860010FBBC /* GYMeModel.m */; };
 		6FAB9E861D490F4D006CBC3D /* GYLoginField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB9E851D490F4D006CBC3D /* GYLoginField.m */; };
 		6FAB9E881D492291006CBC3D /* GYMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FAB9E871D492291006CBC3D /* GYMeViewController.storyboard */; };
 		6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB9E8D1D49268C006CBC3D /* GYCollectionViewCell.m */; };
@@ -113,6 +114,8 @@
 		6F96DF7F1D428F7B0022F07A /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		6F98F9131D43C58C007B5C7B /* GYADModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYADModel.h; sourceTree = "<group>"; };
 		6F98F9141D43C58C007B5C7B /* GYADModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYADModel.m; sourceTree = "<group>"; };
+		6F9966551D4A5B860010FBBC /* GYMeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMeModel.h; sourceTree = "<group>"; };
+		6F9966561D4A5B860010FBBC /* GYMeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMeModel.m; sourceTree = "<group>"; };
 		6FAB9E841D490F4D006CBC3D /* GYLoginField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginField.h; sourceTree = "<group>"; };
 		6FAB9E851D490F4D006CBC3D /* GYLoginField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginField.m; sourceTree = "<group>"; };
 		6FAB9E871D492291006CBC3D /* GYMeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GYMeViewController.storyboard; sourceTree = "<group>"; };
@@ -328,6 +331,8 @@
 		6F88B70D1D3FE222002EF6C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F9966551D4A5B860010FBBC /* GYMeModel.h */,
+				6F9966561D4A5B860010FBBC /* GYMeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -750,6 +755,7 @@
 				6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
 				6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */,
+				6F9966571D4A5B860010FBBC /* GYMeModel.m in Sources */,
 				6F88B7391D3FF5FB002EF6C1 /* GYTabbar.m in Sources */,
 				6F88B7331D3FE586002EF6C1 /* GYNaviController.m in Sources */,
 			);

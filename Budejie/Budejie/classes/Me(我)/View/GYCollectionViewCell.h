@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GYMeModel;
 @interface GYCollectionViewCell : UICollectionViewCell
+
+@property(nonatomic,strong)GYMeModel *item;
 
 @end
