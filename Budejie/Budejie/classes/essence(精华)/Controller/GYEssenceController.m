@@ -7,20 +7,119 @@
 //
 
 #import "GYEssenceController.h"
+@interface GYEssenceController()
 
+@property(nonatomic,strong)UIView *titleView;
+
+@property(nonatomic,strong)UIButton *selectedButton;
+
+@property(nonatomic,strong)UIView *underline;
+
+@end
 
 
 @implementation GYEssenceController
 
 
-
-
-
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     [self setupNaviItem];
+    
+    [self setupTitleView];
+    
+    
 }
+
+- (void)setupTitleView{
+    UIView *titleView = [[UIView alloc]init];
+    [self.view addSubview:titleView];
+    titleView.frame = CGRectMake(0, 64, ScreenWidth, 44);
+    titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
+    self.titleView = titleView;
+    
+    [self setupButtons];
+    [self setupUnderLine];
+    
+}
+
+-(void)setupUnderLine{
+    UIButton *firstButton = self.titleView.subviews.firstObject;
+    
+    UIView *underline = [[UIView alloc]init];
+    self.underline = underline;
+    underline.gy_height = 2;
+    underline.gy_y = self.titleView.gy_height - underline.gy_height;
+    //下划线长度
+//    NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+//    attr[NSFontAttributeName] = firstButton.titleLabel.font;
+//    self.underline.gy_width = [[firstButton currentTitle] sizeWithAttributes:attr].width;
+    //下划线长度第二中计算方法
+//    self.underline.gy_width = firstButton.titleLabel.gy_width;
+//    
+//    self.underline.gy_centerX = firstButton.gy_centerX;
+    
+    
+    [self.titleView addSubview:underline];
+    underline .backgroundColor = [firstButton titleColorForState:UIControlStateSelected];
+    
+    //不写这一句 出不来下划线
+    [firstButton.titleLabel sizeToFit];
+    [self buttonClick:firstButton];
+}
+
+
+-(void)setupButtons{
+    NSInteger count = 5;
+    CGFloat buttonWidth = ScreenWidth/count;
+    NSArray *title = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
+    CGFloat buttonHeight = 44;
+    for (int i = 0; i < count; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.titleView addSubview:button];
+        
+        button.frame = CGRectMake(i * buttonWidth, 0, buttonWidth, buttonHeight);
+        [button setTitle:title[i] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:15];
+        [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal ];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        
+        [button  addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+}
+
+-(void)buttonClick:(UIButton *)button{
+    
+    self.selectedButton.selected = NO;
+    button.selected = YES;
+    self.selectedButton = button;
+    
+  
+    [UIView animateWithDuration:0.25 animations:^{
+        //underline 的width 和文字宽度一致
+//        NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+//        attr[NSFontAttributeName] = button.titleLabel.font;
+//        self.underline.gy_width = [[button currentTitle] sizeWithAttributes:attr].width;
+        self.underline.gy_width = button.titleLabel.gy_width;
+        self.underline.gy_centerX = button.gy_centerX;
+        
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -(void)setupNaviItem{
     //left;
@@ -35,23 +134,8 @@
     
 }
 
-
-
 -(void)game{
-    NSLog(@"game");
+    function;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

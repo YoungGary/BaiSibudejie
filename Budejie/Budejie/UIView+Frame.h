@@ -18,4 +18,8 @@
 
 @property CGFloat gy_y;
 
+@property CGFloat gy_centerX;
+
+@property CGFloat gy_centerY;
+
 @end

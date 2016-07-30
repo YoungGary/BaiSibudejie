@@ -55,5 +55,37 @@
 
 
 
+-(void)setGy_centerX:(CGFloat)gy_centerX{
+    CGPoint center = self.center;
+    center.x = gy_centerX;
+    self.center = center;
+}
+
+
+- (CGFloat)gy_centerX
+{
+    return self.center.x;
+}
+
+-(void)setGy_centerY:(CGFloat)gy_centerY{
+    CGPoint center = self.center;
+    center.y = gy_centerY;
+    self.center = center;
+}
+
+
+- (CGFloat)gy_centerY
+{
+    return self.center.y;
+}
+
+
+
+
+
+
+
+
+
 
 @end
