@@ -7,6 +7,12 @@
 //
 
 #import "GYEssenceController.h"
+
+#import "GYAllViewController.h"
+#import "GYVideoViewController.h"
+#import "GYVoiceViewController.h"
+#import "GYPictureViewController.h"
+#import "GYWordViewController.h"
 @interface GYEssenceController()
 
 @property(nonatomic,strong)UIView *titleView;
@@ -23,12 +29,27 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    //self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    [self setupChildVC];
+    
     [self setupNaviItem];
+    
+    [self setupScrollView];
     
     [self setupTitleView];
     
+  
+}
+
+-(void)setupChildVC{
     
+    [self addChildViewController:[[GYAllViewController alloc]init]];
+    [self addChildViewController:[[GYVideoViewController alloc]init]];
+    [self addChildViewController:[[GYVoiceViewController alloc]init]];
+    [self addChildViewController:[[GYPictureViewController alloc]init]];
+    [self addChildViewController:[[GYWordViewController alloc]init]];
+
 }
 
 - (void)setupTitleView{
@@ -106,8 +127,28 @@
         
     }];
 }
+#pragma mark -- scrollview
 
-
+-(void)setupScrollView{
+    UIScrollView *scrollView = [[UIScrollView alloc]init];
+    scrollView.frame = self.view.bounds;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator  = NO;
+    scrollView.pagingEnabled = YES;
+    [self.view addSubview:scrollView];
+    
+    CGFloat width = scrollView.gy_width;
+    CGFloat height = scrollView.gy_height;
+    CGFloat y = 0;
+    for (int i = 0; i < 5; i++) {
+        UIView *childView = self.childViewControllers[i].view;
+        childView.frame = CGRectMake(i * width, y, width, height);
+        [scrollView addSubview:childView];
+    }
+    scrollView.contentSize = CGSizeMake(5 *scrollView.gy_width, 0);
+}
 
 
 
