@@ -13,13 +13,15 @@
 #import "GYVoiceViewController.h"
 #import "GYPictureViewController.h"
 #import "GYWordViewController.h"
-@interface GYEssenceController()
+@interface GYEssenceController()<UIScrollViewDelegate>
 
 @property(nonatomic,strong)UIView *titleView;
 
 @property(nonatomic,strong)UIButton *selectedButton;
 
 @property(nonatomic,strong)UIView *underline;
+
+@property(nonatomic,strong)UIScrollView *scrollView;
 
 @end
 
@@ -104,12 +106,14 @@
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal ];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        button.tag = i;
         
         [button  addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         
     }
 }
 
+#pragma mark -- cilck button
 -(void)buttonClick:(UIButton *)button{
     
     self.selectedButton.selected = NO;
@@ -125,13 +129,19 @@
         self.underline.gy_width = button.titleLabel.gy_width;
         self.underline.gy_centerX = button.gy_centerX;
         
+        //点击按钮 scrollView 滑动到指定的页面
+        CGFloat offsetX = ScreenWidth *button.tag;
+        self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
+        
     }];
 }
-#pragma mark -- scrollview
+#pragma mark -- scrollview set up
 
 -(void)setupScrollView{
     UIScrollView *scrollView = [[UIScrollView alloc]init];
     scrollView.frame = self.view.bounds;
+    self.scrollView = scrollView;
+    scrollView.delegate = self;
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     scrollView.showsVerticalScrollIndicator = NO;
@@ -142,12 +152,20 @@
     CGFloat width = scrollView.gy_width;
     CGFloat height = scrollView.gy_height;
     CGFloat y = 0;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++) {//子控制器的view加到scrollView上
         UIView *childView = self.childViewControllers[i].view;
         childView.frame = CGRectMake(i * width, y, width, height);
         [scrollView addSubview:childView];
     }
     scrollView.contentSize = CGSizeMake(5 *scrollView.gy_width, 0);
+}
+
+#pragma mark -- scrollView delegate
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSInteger  index = scrollView.contentOffset.x/ScreenWidth;
+    UIButton *button = self.titleView.subviews[index];
+    [self buttonClick:button];
+    
 }
 
 

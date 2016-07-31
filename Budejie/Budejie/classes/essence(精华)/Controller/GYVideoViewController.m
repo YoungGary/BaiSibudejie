@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor grayColor];
+    self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
 
 }
 
