@@ -31,7 +31,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupChildVC];
     
@@ -40,8 +40,15 @@
     [self setupScrollView];
     
     [self setupTitleView];
+    //加载第一个view
+    NSInteger index = 0;
+    CGFloat width = self.scrollView.gy_width;
+    CGFloat height = self.scrollView.gy_height;
+    UIView *childView = self.childViewControllers[index].view;
+    childView.frame = CGRectMake(index * width, 0, width, height);
+    [self.scrollView addSubview:childView];
     
-  
+    
 }
 
 -(void)setupChildVC{
@@ -120,6 +127,9 @@
     button.selected = YES;
     self.selectedButton = button;
     
+    NSInteger index = button.tag;
+    CGFloat width = self.scrollView.gy_width;
+    CGFloat height = self.scrollView.gy_height;
   
     [UIView animateWithDuration:0.25 animations:^{
         //underline 的width 和文字宽度一致
@@ -133,7 +143,21 @@
         CGFloat offsetX = ScreenWidth *button.tag;
         self.scrollView.contentOffset = CGPointMake(offsetX, self.scrollView.contentOffset.y);
         
+    } completion:^(BOOL finished) {//懒加载view
+        UIView *childView = self.childViewControllers[index].view;
+        childView.frame = CGRectMake(index * width, 0, width, height);
+        [self.scrollView addSubview:childView];
+        
     }];
+    //scroll to top
+    for (int i = 0; i < self.childViewControllers.count; i ++) {
+        UIViewController *childVC = self.childViewControllers[i];
+        if (!childVC.isViewLoaded) continue;
+         UIScrollView *scroll = (UIScrollView *)childVC.view;
+        if (![scroll isKindOfClass:[UIScrollView class]]) continue;
+        scroll.scrollsToTop = (i == index);
+    
+    }
 }
 #pragma mark -- scrollview set up
 
@@ -147,16 +171,17 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.showsHorizontalScrollIndicator  = NO;
     scrollView.pagingEnabled = YES;
+    scrollView.scrollsToTop = NO;
     [self.view addSubview:scrollView];
-    
-    CGFloat width = scrollView.gy_width;
-    CGFloat height = scrollView.gy_height;
-    CGFloat y = 0;
-    for (int i = 0; i < 5; i++) {//子控制器的view加到scrollView上
-        UIView *childView = self.childViewControllers[i].view;
-        childView.frame = CGRectMake(i * width, y, width, height);
-        [scrollView addSubview:childView];
-    }
+//    
+//    CGFloat width = scrollView.gy_width;
+//    CGFloat height = scrollView.gy_height;
+//    CGFloat y = 0;
+//    for (int i = 0; i < 5; i++) {//子控制器的view加到scrollView上
+//        UIView *childView = self.childViewControllers[i].view;
+//        childView.frame = CGRectMake(i * width, y, width, height);
+//        [scrollView addSubview:childView];
+//    }
     scrollView.contentSize = CGSizeMake(5 *scrollView.gy_width, 0);
 }
 

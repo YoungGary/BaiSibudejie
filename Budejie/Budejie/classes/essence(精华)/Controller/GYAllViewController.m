@@ -18,8 +18,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+   // self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,20 +31,20 @@
 
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 30;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    cell.textLabel.text = @"1";
-    
-    return cell;
-}
-
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//
+//    return 30;
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    
+//    cell.textLabel.text = @"1";
+//    
+//    return cell;
+//}
+//
 
 /*
 // Override to support conditional editing of the table view.
