@@ -11,7 +11,11 @@
 
 @property(nonatomic,weak)UIButton *addButton;
 
+@property(nonatomic,strong)UIControl *selectedButton;
+
+
 @end
+
 
 @implementation GYTabbar
 
@@ -36,18 +40,45 @@
     CGFloat itemHeight = self.bounds.size.height;
     CGFloat itemX = 0;
     int i = 0;
-    for (UIView *tabbar in self.subviews) {
+    for (UIControl *tabbar in self.subviews) {
         if ([tabbar isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            /* 默认第一个为选中的按钮 */
+            if (i == 0 && self.selectedButton == nil) {
+                self.selectedButton = tabbar;
+            }
+            
             if (i == 2) {
                 i = i+1;
             }
             itemX = i*itemWidth;
             tabbar.frame = CGRectMake(itemX, 0, itemWidth, itemHeight);
             i++;
+            
+            //add target
+            [tabbar addTarget:self action:@selector(clickTabbar:) forControlEvents:UIControlEventTouchUpInside];
+            
         }
+        
+      
+        
     }
     self.addButton.center = CGPointMake(self.bounds.size.width*0.5, self.bounds.size.height*0.5);
 }
+
+- (void)clickTabbar:(UIControl *)tabbar{
+    if (self.selectedButton == tabbar) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"tabbardidselect" object:nil];
+    }
+    self.selectedButton = tabbar;
+}
+
+
+
+
+
+
+
+
 
 
 

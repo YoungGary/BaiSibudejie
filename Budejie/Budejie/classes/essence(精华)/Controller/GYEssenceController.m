@@ -23,6 +23,8 @@
 
 @property(nonatomic,strong)UIScrollView *scrollView;
 
+
+
 @end
 
 
@@ -75,6 +77,10 @@
 
 -(void)setupUnderLine{
     UIButton *firstButton = self.titleView.subviews.firstObject;
+    //默认点击第一个titlebutton
+   
+    self.selectedButton = firstButton;
+    
     
     UIView *underline = [[UIView alloc]init];
     self.underline = underline;
@@ -120,8 +126,11 @@
     }
 }
 
-#pragma mark -- cilck button
+#pragma mark -- cilck title button
 -(void)buttonClick:(UIButton *)button{
+    if (self.selectedButton == button) {//重复点击title button
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"titleButtonSelected" object:nil];
+    }
     
     self.selectedButton.selected = NO;
     button.selected = YES;

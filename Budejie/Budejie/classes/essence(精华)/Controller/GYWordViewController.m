@@ -19,6 +19,25 @@
     
     self.view.backgroundColor = [UIColor cyanColor];
     self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
+    
+     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTabbarButton) name:@"tabbardidselect" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTitleButton) name:@"titleButtonSelected" object:nil];
+}
+#pragma mark -- 重复点击tabbar
+
+- (void)didSelectTabbarButton{
+    if (self.view.window == nil) return;
+    if (self.tableView.scrollsToTop == NO) return;
+    NSLog(@"%@---reload",self.class);
+}
+
+#pragma mark -- 重复点击titleBUTTON
+- (void)didSelectTitleButton{
+    if (self.view.window == nil) return;
+    if (self.tableView.scrollsToTop == NO) return;
+    NSLog(@"%@---reload",self.class);
 
 }
 
@@ -29,25 +48,23 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return 30;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSString *string = [NSString stringWithFormat: @"%@=====%ld",self.class,indexPath.row ];
+    cell.textLabel.text = string;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -92,5 +109,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end
