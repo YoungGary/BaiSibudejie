@@ -7,6 +7,11 @@
 //
 
 #import "GYAllViewController.h"
+#import "GYTopicModel.h"
+
+#import <AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import "SVProgressHUD.h"
 
 @interface GYAllViewController ()
 //下拉刷新
@@ -26,6 +31,14 @@
 
 @property(nonatomic,assign,getter=isRefreshup)BOOL refreshingUp;
 
+//模型数组
+
+@property(nonatomic,strong)NSMutableArray *topics;
+//maxtime
+
+@property(nonatomic,strong)NSString *maxtime;
+
+
 @end
 
 @implementation GYAllViewController
@@ -33,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataCount = 20;
+    
     self.view.backgroundColor = [UIColor redColor];
 
     self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
@@ -63,6 +76,8 @@
     self.topLabel = topLabel;
     [headerView addSubview:topLabel];
     
+    [self HeaderBeginRefresh];
+    
     //创建下拉刷新控件
     UILabel *refreshLabel = [[UILabel alloc]init];
     self.refreshLabel =  refreshLabel;
@@ -81,8 +96,7 @@
     self.footerView = footerView;
     footerView.frame = CGRectMake(0, 0, self.tableView.gy_width, 44);
     self.tableView.tableFooterView = footerView;
-    
-    [self HeaderBeginRefresh];
+ 
     
     UILabel *label = [[UILabel alloc]init];
     label.text = @"上拉加载更多数据";
@@ -117,17 +131,15 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    self.tableView.tableFooterView.hidden = (self.dataCount == 0);
-    return self.dataCount;
+    self.tableView.tableFooterView.hidden = (self.topics.count == 0);
+    return self.topics.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    NSString *string = [NSString stringWithFormat: @"%@=====%ld",self.class,indexPath.row ];
-    cell.textLabel.text = string;
-    
+    GYTopicModel *model = self.topics[indexPath.row];
+    cell.textLabel.text = model.name;
     return cell;
 }
 
@@ -174,6 +186,63 @@
     }
 }
 
+#pragma mark -- load data
+
+- (void)loadNewData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"a"] = @"list";
+    param[@"c"] = @"data";
+    param[@"type"] = @"1";
+    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSArray *dicArr = responseObject[@"list"];
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+       self.topics = [GYTopicModel mj_objectArrayWithKeyValuesArray:dicArr];
+        [self.tableView reloadData];
+        //结束刷新
+        [self HeaderEndRefresh];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙请稍后再试!"];
+        
+        //结束刷新
+        [self HeaderEndRefresh];
+    }];
+    
+}
+
+- (void)loadmoreData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"a"] = @"list";
+    param[@"c"] = @"data";
+    param[@"type"] = @"1";
+    param[@"maxtime"] = self.maxtime;
+    [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        NSArray *dicArr = responseObject[@"list"];
+        NSArray *arr  = [GYTopicModel mj_objectArrayWithKeyValuesArray:dicArr];
+        [self.topics addObjectsFromArray:arr];
+        [self.tableView reloadData];
+        //结束刷新
+        [self FooterEndRefresh];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙请稍后再试!"];
+        
+        //结束刷新
+        [self FooterEndRefresh];
+    }];
+         
+    
+}
+
+
+
+
+#pragma mark  -- refresh
+
 - (void)HeaderBeginRefresh{
     if (self.isRefreshdown) return;
     self.refreshingdown = YES;
@@ -189,14 +258,16 @@
         //偏移量
         self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, - inset.top);
     }];
-    NSLog(@"发送请求---下拉");
-    [self HeaderEndRefresh];
+    //获取
+    [self loadNewData];
+    
 }
 
 -(void)HeaderEndRefresh{
     //向服务器请求数据
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
+    
+   
+        self.refreshingdown = NO;
         [UIView animateWithDuration:0.25 animations:^{
             
             self.refreshLabel.backgroundColor = [UIColor cyanColor];
@@ -207,12 +278,10 @@
             UIEdgeInsets inset = self.tableView.contentInset;
             inset.top -= self.refreshLabel.gy_height;
             self.tableView.contentInset = inset;
-            
-            self.refreshingdown = NO;
-            
+
         }];
         
-    });
+   
 }
 
 - (void)FooterBeginRefresh{
@@ -221,12 +290,14 @@
     self.label.text = @"正在加载中..";
     self.label.backgroundColor = [UIColor cyanColor];
     
-    [self FooterEndRefresh];
+    [self loadmoreData];
+    
     
 }
 
 - (void)FooterEndRefresh{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+   
         
         self.dataCount += 5;
         [self.tableView reloadData];
@@ -236,7 +307,7 @@
         self.label.textColor = [UIColor whiteColor];
         self.label.backgroundColor = [UIColor orangeColor];
         
-    });
+   
 }
 
 -(void)dealloc{

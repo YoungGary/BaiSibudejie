@@ -45,6 +45,7 @@
 		6FAB9E881D492291006CBC3D /* GYMeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FAB9E871D492291006CBC3D /* GYMeViewController.storyboard */; };
 		6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAB9E8D1D49268C006CBC3D /* GYCollectionViewCell.m */; };
 		6FAB9E901D49268C006CBC3D /* GYCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FAB9E8E1D49268C006CBC3D /* GYCollectionViewCell.xib */; };
+		6FBF4DFF1D50F14D00479538 /* GYTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF4DFE1D50F14D00479538 /* GYTopicModel.m */; };
 		6FCE9E641D46777600F2BC0D /* GYFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */; };
 		6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */; };
 		6FCE9E691D467E7C00F2BC0D /* GYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */; };
@@ -137,6 +138,8 @@
 		6FAB9E8C1D49268C006CBC3D /* GYCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYCollectionViewCell.h; sourceTree = "<group>"; };
 		6FAB9E8D1D49268C006CBC3D /* GYCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYCollectionViewCell.m; sourceTree = "<group>"; };
 		6FAB9E8E1D49268C006CBC3D /* GYCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYCollectionViewCell.xib; sourceTree = "<group>"; };
+		6FBF4DFD1D50F14D00479538 /* GYTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTopicModel.h; sourceTree = "<group>"; };
+		6FBF4DFE1D50F14D00479538 /* GYTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTopicModel.m; sourceTree = "<group>"; };
 		6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYFriendViewController.xib; sourceTree = "<group>"; };
 		6FCE9E651D467E7C00F2BC0D /* GYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginViewController.h; sourceTree = "<group>"; };
 		6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginViewController.m; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 		6F88B7051D3FE222002EF6C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6FBF4DFD1D50F14D00479538 /* GYTopicModel.h */,
+				6FBF4DFE1D50F14D00479538 /* GYTopicModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -782,6 +787,7 @@
 				6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */,
 				6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */,
 				6F0BF1BF1D4E0C76003988D2 /* GYPictureViewController.m in Sources */,
+				6FBF4DFF1D50F14D00479538 /* GYTopicModel.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
 				6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */,
 				6F0BF1BC1D4E0C60003988D2 /* GYVoiceViewController.m in Sources */,
