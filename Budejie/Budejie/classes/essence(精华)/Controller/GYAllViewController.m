@@ -82,7 +82,7 @@
     footerView.frame = CGRectMake(0, 0, self.tableView.gy_width, 44);
     self.tableView.tableFooterView = footerView;
     
-  
+    [self HeaderBeginRefresh];
     
     UILabel *label = [[UILabel alloc]init];
     label.text = @"上拉加载更多数据";
@@ -100,6 +100,7 @@
     if (self.view.window == nil) return;
     if (self.tableView.scrollsToTop == NO) return;
     NSLog(@"%@---reload",self.class);
+    [self HeaderBeginRefresh];
 }
 
 #pragma mark -- 重复点击titleBUTTON
@@ -107,6 +108,7 @@
     if (self.view.window == nil) return;
     if (self.tableView.scrollsToTop == NO) return;
     NSLog(@"%@---reload",self.class);
+    [self HeaderBeginRefresh];
 }
 
 
@@ -136,36 +138,7 @@
     
      CGFloat offsetY = self.tableView.contentInset.top + self.refreshLabel.gy_height;
     if (self.tableView.contentOffset.y < -offsetY) {
-        self.refreshingdown = YES;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.refreshLabel.backgroundColor = [UIColor blueColor];
-            self.refreshLabel.text = @"刷新中...";
-            self.refreshLabel.textColor = [UIColor whiteColor];
-            self.refreshLabel.textAlignment = NSTextAlignmentCenter;
-            
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top += self.refreshLabel.gy_height;
-            self.tableView.contentInset = inset;
-        }];
-       //向服务器请求数据
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [UIView animateWithDuration:0.25 animations:^{
-                
-            self.refreshLabel.backgroundColor = [UIColor cyanColor];
-            self.refreshLabel.text = @"下拉可以刷新";
-            self.refreshLabel.textColor = [UIColor whiteColor];
-            self.refreshLabel.textAlignment = NSTextAlignmentCenter;
-            
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top -= self.refreshLabel.gy_height;
-            self.tableView.contentInset = inset;
-            
-            self.refreshingdown = NO;
-                
-            }];
-            
-        });
+        [self HeaderBeginRefresh];
     }
 }
 
@@ -196,28 +169,75 @@
     if (self.isRefreshup) return;
     
     CGFloat offsetY = self.tableView.contentSize.height + self.tableView.tableFooterView.gy_height - self.tableView.gy_height;
-    if (self.tableView.contentOffset.y >= offsetY) {
-        //进入刷新状态
-        self.refreshingUp = YES;
-        self.label.text = @"正在加载中..";
-        self.label.backgroundColor = [UIColor cyanColor];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            self.dataCount += 5;
-            [self.tableView reloadData];
-            
-            self.refreshingUp  = NO;
-            self.label.text = @"上拉加载更多数据";
-            self.label.textColor = [UIColor whiteColor];
-            self.label.backgroundColor = [UIColor orangeColor];
-            
-        });
+    if (self.tableView.contentOffset.y >= offsetY && self.tableView.contentOffset.y > - (self.tableView.contentInset.top)) {
+        [self FooterBeginRefresh];
     }
 }
 
+- (void)HeaderBeginRefresh{
+    if (self.isRefreshdown) return;
+    self.refreshingdown = YES;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.refreshLabel.backgroundColor = [UIColor blueColor];
+        self.refreshLabel.text = @"刷新中...";
+        self.refreshLabel.textColor = [UIColor whiteColor];
+        self.refreshLabel.textAlignment = NSTextAlignmentCenter;
+        
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top += self.refreshLabel.gy_height;
+        self.tableView.contentInset = inset;
+        //偏移量
+        self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, - inset.top);
+    }];
+    NSLog(@"发送请求---下拉");
+    [self HeaderEndRefresh];
+}
 
+-(void)HeaderEndRefresh{
+    //向服务器请求数据
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:0.25 animations:^{
+            
+            self.refreshLabel.backgroundColor = [UIColor cyanColor];
+            self.refreshLabel.text = @"下拉可以刷新";
+            self.refreshLabel.textColor = [UIColor whiteColor];
+            self.refreshLabel.textAlignment = NSTextAlignmentCenter;
+            
+            UIEdgeInsets inset = self.tableView.contentInset;
+            inset.top -= self.refreshLabel.gy_height;
+            self.tableView.contentInset = inset;
+            
+            self.refreshingdown = NO;
+            
+        }];
+        
+    });
+}
 
+- (void)FooterBeginRefresh{
+    //进入刷新状态
+    self.refreshingUp = YES;
+    self.label.text = @"正在加载中..";
+    self.label.backgroundColor = [UIColor cyanColor];
+    
+    [self FooterEndRefresh];
+    
+}
+
+- (void)FooterEndRefresh{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        self.dataCount += 5;
+        [self.tableView reloadData];
+        
+        self.refreshingUp  = NO;
+        self.label.text = @"上拉加载更多数据";
+        self.label.textColor = [UIColor whiteColor];
+        self.label.backgroundColor = [UIColor orangeColor];
+        
+    });
+}
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];

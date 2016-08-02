@@ -38,6 +38,7 @@
     if (self.view.window == nil) return;
     if (self.tableView.scrollsToTop == NO) return;
     NSLog(@"%@---reload",self.class);
+    
 
 }
 
