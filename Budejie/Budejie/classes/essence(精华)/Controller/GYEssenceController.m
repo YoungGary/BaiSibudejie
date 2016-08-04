@@ -131,7 +131,10 @@
     if (self.selectedButton == button) {//重复点击title button
         [[NSNotificationCenter defaultCenter]postNotificationName:@"titleButtonSelected" object:nil];
     }
-    
+    [self dealWithbuttonClick:button];
+  }
+
+- (void)dealWithbuttonClick:(UIButton *)button{
     self.selectedButton.selected = NO;
     button.selected = YES;
     self.selectedButton = button;
@@ -139,12 +142,12 @@
     NSInteger index = button.tag;
     CGFloat width = self.scrollView.gy_width;
     CGFloat height = self.scrollView.gy_height;
-  
+    
     [UIView animateWithDuration:0.25 animations:^{
         //underline 的width 和文字宽度一致
-//        NSMutableDictionary *attr = [NSMutableDictionary dictionary];
-//        attr[NSFontAttributeName] = button.titleLabel.font;
-//        self.underline.gy_width = [[button currentTitle] sizeWithAttributes:attr].width;
+        //        NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+        //        attr[NSFontAttributeName] = button.titleLabel.font;
+        //        self.underline.gy_width = [[button currentTitle] sizeWithAttributes:attr].width;
         self.underline.gy_width = button.titleLabel.gy_width;
         self.underline.gy_centerX = button.gy_centerX;
         
@@ -162,12 +165,15 @@
     for (int i = 0; i < self.childViewControllers.count; i ++) {
         UIViewController *childVC = self.childViewControllers[i];
         if (!childVC.isViewLoaded) continue;
-         UIScrollView *scroll = (UIScrollView *)childVC.view;
+        UIScrollView *scroll = (UIScrollView *)childVC.view;
         if (![scroll isKindOfClass:[UIScrollView class]]) continue;
         scroll.scrollsToTop = (i == index);
-    
+        
     }
+
 }
+
+
 #pragma mark -- scrollview set up
 
 -(void)setupScrollView{
@@ -198,8 +204,8 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSInteger  index = scrollView.contentOffset.x/ScreenWidth;
     UIButton *button = self.titleView.subviews[index];
-    [self buttonClick:button];
-    
+    //[self buttonClick:button];
+    [self dealWithbuttonClick:button];
 }
 
 

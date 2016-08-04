@@ -49,6 +49,11 @@
 		6FCE9E641D46777600F2BC0D /* GYFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E631D46777600F2BC0D /* GYFriendViewController.xib */; };
 		6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */; };
 		6FCE9E691D467E7C00F2BC0D /* GYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */; };
+		6FE5E6D51D524DCC000DF2C8 /* GYTopicBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5E6D41D524DCC000DF2C8 /* GYTopicBaseCell.m */; };
+		6FE5E6E41D524E5D000DF2C8 /* GYVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5E6E31D524E5D000DF2C8 /* GYVideoCell.m */; };
+		6FE5E6E71D524E70000DF2C8 /* GYVoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5E6E61D524E70000DF2C8 /* GYVoiceCell.m */; };
+		6FE5E6EA1D524E81000DF2C8 /* GYPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5E6E91D524E81000DF2C8 /* GYPictureCell.m */; };
+		6FE5E6ED1D524E8D000DF2C8 /* GYWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5E6EC1D524E8C000DF2C8 /* GYWordCell.m */; };
 		6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E11D4129AE00AB155C /* UIView+Frame.m */; };
 		6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729E71D41388100AB155C /* UIBarButtonItem+Extension.m */; };
 		6FE729FB1D41460000AB155C /* GYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE729FA1D41460000AB155C /* GYSettingViewController.m */; };
@@ -144,6 +149,16 @@
 		6FCE9E651D467E7C00F2BC0D /* GYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYLoginViewController.h; sourceTree = "<group>"; };
 		6FCE9E661D467E7C00F2BC0D /* GYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYLoginViewController.m; sourceTree = "<group>"; };
 		6FCE9E671D467E7C00F2BC0D /* GYLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYLoginViewController.xib; sourceTree = "<group>"; };
+		6FE5E6D31D524DCC000DF2C8 /* GYTopicBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTopicBaseCell.h; sourceTree = "<group>"; };
+		6FE5E6D41D524DCC000DF2C8 /* GYTopicBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTopicBaseCell.m; sourceTree = "<group>"; };
+		6FE5E6E21D524E5D000DF2C8 /* GYVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYVideoCell.h; sourceTree = "<group>"; };
+		6FE5E6E31D524E5D000DF2C8 /* GYVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYVideoCell.m; sourceTree = "<group>"; };
+		6FE5E6E51D524E70000DF2C8 /* GYVoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYVoiceCell.h; sourceTree = "<group>"; };
+		6FE5E6E61D524E70000DF2C8 /* GYVoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYVoiceCell.m; sourceTree = "<group>"; };
+		6FE5E6E81D524E81000DF2C8 /* GYPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPictureCell.h; sourceTree = "<group>"; };
+		6FE5E6E91D524E81000DF2C8 /* GYPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPictureCell.m; sourceTree = "<group>"; };
+		6FE5E6EB1D524E8C000DF2C8 /* GYWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYWordCell.h; sourceTree = "<group>"; };
+		6FE5E6EC1D524E8C000DF2C8 /* GYWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYWordCell.m; sourceTree = "<group>"; };
 		6FE729E01D4129AE00AB155C /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		6FE729E11D4129AE00AB155C /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		6FE729E51D412CAF00AB155C /* Budejie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Budejie.pch; sourceTree = "<group>"; };
@@ -287,6 +302,16 @@
 		6F88B7061D3FE222002EF6C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6FE5E6D31D524DCC000DF2C8 /* GYTopicBaseCell.h */,
+				6FE5E6D41D524DCC000DF2C8 /* GYTopicBaseCell.m */,
+				6FE5E6E51D524E70000DF2C8 /* GYVoiceCell.h */,
+				6FE5E6E61D524E70000DF2C8 /* GYVoiceCell.m */,
+				6FE5E6E21D524E5D000DF2C8 /* GYVideoCell.h */,
+				6FE5E6E31D524E5D000DF2C8 /* GYVideoCell.m */,
+				6FE5E6E81D524E81000DF2C8 /* GYPictureCell.h */,
+				6FE5E6E91D524E81000DF2C8 /* GYPictureCell.m */,
+				6FE5E6EB1D524E8C000DF2C8 /* GYWordCell.h */,
+				6FE5E6EC1D524E8C000DF2C8 /* GYWordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -768,7 +793,9 @@
 				6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */,
 				6F88B72A1D3FE46B002EF6C1 /* GYMeViewController.m in Sources */,
 				6F88B7361D3FE75A002EF6C1 /* UIImage+Image.m in Sources */,
+				6FE5E6ED1D524E8D000DF2C8 /* GYWordCell.m in Sources */,
 				6F5A2BB11D3E9BE8009885CA /* AppDelegate.m in Sources */,
+				6FE5E6E71D524E70000DF2C8 /* GYVoiceCell.m in Sources */,
 				6F659CFB1D4511780099D760 /* GYSubTagModel.m in Sources */,
 				6FAB9E861D490F4D006CBC3D /* GYLoginField.m in Sources */,
 				6F88B7301D3FE4A8002EF6C1 /* GYPublishViewController.m in Sources */,
@@ -783,12 +810,15 @@
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
 				6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */,
+				6FE5E6D51D524DCC000DF2C8 /* GYTopicBaseCell.m in Sources */,
 				6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */,
 				6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */,
 				6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */,
 				6F0BF1BF1D4E0C76003988D2 /* GYPictureViewController.m in Sources */,
 				6FBF4DFF1D50F14D00479538 /* GYTopicModel.m in Sources */,
+				6FE5E6E41D524E5D000DF2C8 /* GYVideoCell.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
+				6FE5E6EA1D524E81000DF2C8 /* GYPictureCell.m in Sources */,
 				6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */,
 				6F0BF1BC1D4E0C60003988D2 /* GYVoiceViewController.m in Sources */,
 				6F9966571D4A5B860010FBBC /* GYMeModel.m in Sources */,

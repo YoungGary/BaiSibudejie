@@ -13,6 +13,12 @@
 #import <MJExtension/MJExtension.h>
 #import "SVProgressHUD.h"
 
+#import "GYTopicBaseCell.h"
+#import "GYWordCell.h"
+#import "GYVideoCell.h"
+#import "GYVoiceCell.h"
+#import "GYPictureCell.h"
+
 @interface GYAllViewController ()
 //下拉刷新
 @property(nonatomic,weak)UIView *headerView;
@@ -46,12 +52,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.view.backgroundColor = [UIColor redColor];
 
-    self.tableView.contentInset = UIEdgeInsetsMake(64+44, 0, 49, 0);
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.tableView.contentInset = UIEdgeInsetsMake(64+50+44, 0, 49, 0);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTabbarButton) name:@"tabbardidselect" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTitleButton) name:@"titleButtonSelected" object:nil];
@@ -137,9 +140,39 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     GYTopicModel *model = self.topics[indexPath.row];
-    cell.textLabel.text = model.name;
+    GYTopicBaseCell *cell = nil;
+    
+    switch (model.type) {//10为图片 29为段子 31为音频 41为视频 1全部
+        case 10:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"GYPictureCell"];
+            if (cell == nil) {
+                cell = [[GYPictureCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYPictureCell"];
+            }
+            break;
+        case 29:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"GYWordCell"];
+            if (cell == nil) {
+            cell = [[GYWordCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYWordCell"];
+            }
+            break;
+        case 31:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"GYVoiceCell"];
+            if (cell == nil) {
+            cell = [[GYVoiceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYVoiceCell"];
+            }
+            break;
+        case 41:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"GYVideoCell"];
+            if (cell == nil) {
+            cell = [[GYVideoCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYVideoCell"];
+            }
+            break;
+        default:
+            break;
+    }
+    
+    cell.model = model;
     return cell;
 }
 
@@ -245,6 +278,7 @@
 
 - (void)HeaderBeginRefresh{
     if (self.isRefreshdown) return;
+     if (self.isRefreshup) return;
     self.refreshingdown = YES;
     [UIView animateWithDuration:0.25 animations:^{
         self.refreshLabel.backgroundColor = [UIColor blueColor];
@@ -285,6 +319,8 @@
 }
 
 - (void)FooterBeginRefresh{
+    if (self.isRefreshdown) return;
+    if (self.isRefreshup) return;
     //进入刷新状态
     self.refreshingUp = YES;
     self.label.text = @"正在加载中..";
