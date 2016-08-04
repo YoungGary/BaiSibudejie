@@ -13,11 +13,8 @@
 #import <MJExtension/MJExtension.h>
 #import "SVProgressHUD.h"
 
-#import "GYTopicBaseCell.h"
-#import "GYWordCell.h"
-#import "GYVideoCell.h"
-#import "GYVoiceCell.h"
-#import "GYPictureCell.h"
+#import "GYTopicCell.h"
+
 
 @interface GYAllViewController ()
 //下拉刷新
@@ -52,9 +49,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor colorWithRed:206/256.0 green:206/256.0  blue:206/256.0  alpha:1];
 
     self.tableView.contentInset = UIEdgeInsetsMake(64+50+44, 0, 49, 0);
+    
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"GYTopicCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    
+     self.tableView.rowHeight = 300;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTabbarButton) name:@"tabbardidselect" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTitleButton) name:@"titleButtonSelected" object:nil];
@@ -141,37 +143,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GYTopicModel *model = self.topics[indexPath.row];
-    GYTopicBaseCell *cell = nil;
-    
-    switch (model.type) {//10为图片 29为段子 31为音频 41为视频 1全部
-        case 10:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"GYPictureCell"];
-            if (cell == nil) {
-                cell = [[GYPictureCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYPictureCell"];
-            }
-            break;
-        case 29:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"GYWordCell"];
-            if (cell == nil) {
-            cell = [[GYWordCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYWordCell"];
-            }
-            break;
-        case 31:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"GYVoiceCell"];
-            if (cell == nil) {
-            cell = [[GYVoiceCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYVoiceCell"];
-            }
-            break;
-        case 41:
-            cell = [tableView dequeueReusableCellWithIdentifier:@"GYVideoCell"];
-            if (cell == nil) {
-            cell = [[GYVideoCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GYVideoCell"];
-            }
-            break;
-        default:
-            break;
-    }
-    
+    GYTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.model = model;
     return cell;
 }
