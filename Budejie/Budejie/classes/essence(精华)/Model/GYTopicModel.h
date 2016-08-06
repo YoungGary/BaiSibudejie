@@ -32,4 +32,7 @@
 /** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
 
+
+@property(nonatomic,assign)CGFloat cellHeight;
+
 @end

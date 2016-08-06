@@ -56,7 +56,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GYTopicCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
-     self.tableView.rowHeight = 300;
+    // self.tableView.rowHeight = 300;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTabbarButton) name:@"tabbardidselect" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSelectTitleButton) name:@"titleButtonSelected" object:nil];
@@ -165,6 +165,22 @@
     
     [self dealwithFooterView];
 }
+
+
+#pragma mark -- cell height
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+   // CGFloat cellHeight = 0;
+    GYTopicModel *model = self.topics[indexPath.row];
+//    cellHeight += 55;//top
+//     CGSize size = [model.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(ScreenWidth-20, MAXFLOAT)];
+//    cellHeight += size.height;//text height
+//    cellHeight += 20;//margin
+//    cellHeight += 35;//bottom
+    
+
+    return model.cellHeight;
+}
+
 #pragma mark --   处理下拉刷新
 - (void)dealWithHeaderView{
     
