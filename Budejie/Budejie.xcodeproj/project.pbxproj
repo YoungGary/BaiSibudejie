@@ -12,6 +12,12 @@
 		6F0BF1BC1D4E0C60003988D2 /* GYVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BF1BB1D4E0C60003988D2 /* GYVoiceViewController.m */; };
 		6F0BF1BF1D4E0C76003988D2 /* GYPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BF1BE1D4E0C76003988D2 /* GYPictureViewController.m */; };
 		6F0BF1C21D4E0C84003988D2 /* GYWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0BF1C11D4E0C84003988D2 /* GYWordViewController.m */; };
+		6F12307F1D5641A8006FCFA0 /* GYVideoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F12307E1D5641A8006FCFA0 /* GYVideoCellView.m */; };
+		6F1230811D5641B4006FCFA0 /* GYVideoCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1230801D5641B4006FCFA0 /* GYVideoCellView.xib */; };
+		6F1230841D5641F2006FCFA0 /* GYPictureCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1230831D5641F2006FCFA0 /* GYPictureCellView.m */; };
+		6F1230861D5641FD006FCFA0 /* GYPictureCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1230851D5641FD006FCFA0 /* GYPictureCellView.xib */; };
+		6F1230891D56422C006FCFA0 /* GYVoiceCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1230881D56422C006FCFA0 /* GYVoiceCellView.m */; };
+		6F12308B1D5642F1006FCFA0 /* GYVoiceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F12308A1D5642F1006FCFA0 /* GYVoiceCellView.xib */; };
 		6F31D6921D53A44900DDAA20 /* GYTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F31D6901D53A44900DDAA20 /* GYTopicCell.m */; };
 		6F31D6931D53A44900DDAA20 /* GYTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */; };
 		6F5A2BAE1D3E9BE8009885CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A2BAD1D3E9BE8009885CA /* main.m */; };
@@ -85,6 +91,15 @@
 		6F0BF1BE1D4E0C76003988D2 /* GYPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPictureViewController.m; sourceTree = "<group>"; };
 		6F0BF1C01D4E0C84003988D2 /* GYWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYWordViewController.h; sourceTree = "<group>"; };
 		6F0BF1C11D4E0C84003988D2 /* GYWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYWordViewController.m; sourceTree = "<group>"; };
+		6F12307D1D5641A8006FCFA0 /* GYVideoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYVideoCellView.h; sourceTree = "<group>"; };
+		6F12307E1D5641A8006FCFA0 /* GYVideoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYVideoCellView.m; sourceTree = "<group>"; };
+		6F1230801D5641B4006FCFA0 /* GYVideoCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYVideoCellView.xib; sourceTree = "<group>"; };
+		6F1230821D5641F2006FCFA0 /* GYPictureCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYPictureCellView.h; sourceTree = "<group>"; };
+		6F1230831D5641F2006FCFA0 /* GYPictureCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYPictureCellView.m; sourceTree = "<group>"; };
+		6F1230851D5641FD006FCFA0 /* GYPictureCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYPictureCellView.xib; sourceTree = "<group>"; };
+		6F1230871D56422C006FCFA0 /* GYVoiceCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYVoiceCellView.h; sourceTree = "<group>"; };
+		6F1230881D56422C006FCFA0 /* GYVoiceCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYVoiceCellView.m; sourceTree = "<group>"; };
+		6F12308A1D5642F1006FCFA0 /* GYVoiceCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYVoiceCellView.xib; sourceTree = "<group>"; };
 		6F31D68F1D53A44900DDAA20 /* GYTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTopicCell.h; sourceTree = "<group>"; };
 		6F31D6901D53A44900DDAA20 /* GYTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTopicCell.m; sourceTree = "<group>"; };
 		6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYTopicCell.xib; sourceTree = "<group>"; };
@@ -295,6 +310,15 @@
 				6F31D68F1D53A44900DDAA20 /* GYTopicCell.h */,
 				6F31D6901D53A44900DDAA20 /* GYTopicCell.m */,
 				6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */,
+				6F12307D1D5641A8006FCFA0 /* GYVideoCellView.h */,
+				6F12307E1D5641A8006FCFA0 /* GYVideoCellView.m */,
+				6F1230801D5641B4006FCFA0 /* GYVideoCellView.xib */,
+				6F1230821D5641F2006FCFA0 /* GYPictureCellView.h */,
+				6F1230831D5641F2006FCFA0 /* GYPictureCellView.m */,
+				6F1230851D5641FD006FCFA0 /* GYPictureCellView.xib */,
+				6F1230871D56422C006FCFA0 /* GYVoiceCellView.h */,
+				6F1230881D56422C006FCFA0 /* GYVoiceCellView.m */,
+				6F12308A1D5642F1006FCFA0 /* GYVoiceCellView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -692,6 +716,7 @@
 				6F5A2BBC1D3E9BE8009885CA /* LaunchScreen.storyboard in Resources */,
 				6F96DF811D428F7B0022F07A /* LaunchImage-700-568h@2x.png in Resources */,
 				6F31D6931D53A44900DDAA20 /* GYTopicCell.xib in Resources */,
+				6F12308B1D5642F1006FCFA0 /* GYVoiceCellView.xib in Resources */,
 				6FCE9E641D46777600F2BC0D /* GYFriendViewController.xib in Resources */,
 				6FAB9E901D49268C006CBC3D /* GYCollectionViewCell.xib in Resources */,
 				6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */,
@@ -705,7 +730,9 @@
 				6F96DF831D428F7B0022F07A /* LaunchImage-800-667h@2x.png in Resources */,
 				6F96DF771D428DB40022F07A /* GYADViewController.xib in Resources */,
 				6FF3CAEF1D47C29800F35AF8 /* GYLoginView.xib in Resources */,
+				6F1230861D5641FD006FCFA0 /* GYPictureCellView.xib in Resources */,
 				6F96DF861D428F7B0022F07A /* LaunchImage@2x.png in Resources */,
+				6F1230811D5641B4006FCFA0 /* GYVideoCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F0BF1B91D4E0C53003988D2 /* GYVideoViewController.m in Sources */,
+				6F1230891D56422C006FCFA0 /* GYVoiceCellView.m in Sources */,
 				6F659CF81D4510DB0099D760 /* GYSubTagViewController.m in Sources */,
 				6F0BF1C21D4E0C84003988D2 /* GYWordViewController.m in Sources */,
 				6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */,
@@ -795,9 +823,11 @@
 				6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */,
 				6F98F9151D43C58C007B5C7B /* GYADModel.m in Sources */,
 				6FF3CAF21D47D5EA00F35AF8 /* GYFastLoginView.m in Sources */,
+				6F12307F1D5641A8006FCFA0 /* GYVideoCellView.m in Sources */,
 				6F0BF1BF1D4E0C76003988D2 /* GYPictureViewController.m in Sources */,
 				6FBF4DFF1D50F14D00479538 /* GYTopicModel.m in Sources */,
 				6F96DF761D428DB40022F07A /* GYADViewController.m in Sources */,
+				6F1230841D5641F2006FCFA0 /* GYPictureCellView.m in Sources */,
 				6FAB9E8F1D49268C006CBC3D /* GYCollectionViewCell.m in Sources */,
 				6F0BF1BC1D4E0C60003988D2 /* GYVoiceViewController.m in Sources */,
 				6F31D6921D53A44900DDAA20 /* GYTopicCell.m in Sources */,

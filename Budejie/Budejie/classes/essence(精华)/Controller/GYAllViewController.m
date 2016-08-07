@@ -216,8 +216,9 @@
     param[@"c"] = @"data";
     param[@"type"] = @"1";
     [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        [responseObject   writeToFile:@"/Users/young/Desktop/data.plist" atomically:YES];
         NSArray *dicArr = responseObject[@"list"];
+        
         self.maxtime = responseObject[@"info"][@"maxtime"];
        self.topics = [GYTopicModel mj_objectArrayWithKeyValuesArray:dicArr];
         [self.tableView reloadData];

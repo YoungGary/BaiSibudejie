@@ -22,4 +22,7 @@
 
 @property CGFloat gy_centerY;
 
+
++(instancetype)loadNibFromSelf;
+
 @end
