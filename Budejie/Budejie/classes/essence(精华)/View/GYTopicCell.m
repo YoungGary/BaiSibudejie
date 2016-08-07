@@ -29,8 +29,37 @@
 
 @property (weak, nonatomic) IBOutlet UIView *hotConmmentView;
 
+//中间3种图片 懒加载 所以生成属性
+@property(nonatomic,weak)GYPictureCellView *pictureView;
+
+@property(nonatomic,weak)GYVoiceCellView *voiceView;
+
+@property(nonatomic,weak)GYVideoCellView *videoView;
+
+
 @end
 @implementation GYTopicCell
+#pragma mark -- 懒加载中间图片
+-(GYPictureCellView *)pictureView{
+    if (nil == _pictureView) {
+        _pictureView = [GYPictureCellView loadNibFromSelf];
+    }
+    return _pictureView;
+}
+
+-(GYVoiceCellView *)voiceView{
+    if (nil == _voiceView) {
+        _voiceView = [GYVoiceCellView loadNibFromSelf];
+    }
+    return _voiceView;
+}
+
+-(GYVideoCellView *)videoView{
+    if (nil == _videoView) {
+        _videoView = [GYVideoCellView loadNibFromSelf];
+    }
+    return _videoView;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -70,11 +99,27 @@
     }
     //声音 视频 图片 view
     if(model.type == TopicTypePicture){//图片
-        [self.contentView addSubview:[GYPictureCellView loadNibFromSelf]];
+        [self.contentView addSubview:self.pictureView];
+        self.pictureView.hidden = NO;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = YES;
     }else if (model.type == TopicTypeVoice){//音频
-        [self.contentView addSubview:[GYVoiceCellView loadNibFromSelf]];
+        [self.contentView addSubview:self.voiceView];
+        self.pictureView.hidden = YES;
+        self.voiceView.hidden = NO;
+        self.videoView.hidden = YES;
+        //设置model
+        self.voiceView.model = model;
+        
     }else if (model.type == TopicTypeVideo){//视频
-        [self.contentView addSubview:[GYVideoCellView loadNibFromSelf]];
+        [self.contentView addSubview:self.videoView];
+        self.pictureView.hidden = YES;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = NO;
+    }else if (model.type == TopicTypeWord){
+        self.pictureView.hidden = YES;
+        self.voiceView.hidden = YES;
+        self.videoView.hidden = YES;
     }
     
 }
@@ -97,7 +142,19 @@
     [super setFrame:frame];
 }
 
-
+//计算中间内容的rect
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    if(self.model.type == TopicTypePicture){//图片
+        self.pictureView.frame = self.model.middleFrame;
+       
+    }else if (self.model.type == TopicTypeVoice){//音频
+        self.voiceView.frame = self.model.middleFrame;
+        
+    }else if (self.model.type == TopicTypeVideo){//视频
+        self.videoView.frame = self.model.middleFrame   ;
+    }
+}
 
 
 

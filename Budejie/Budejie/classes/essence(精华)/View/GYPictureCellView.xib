@@ -8,12 +8,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GYPictureCellView">
-            <rect key="frame" x="0.0" y="0.0" width="404" height="153"/>
+            <rect key="frame" x="0.0" y="0.0" width="94" height="37"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" red="1" green="0.12245156729999999" blue="0.1204401863" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="241" y="510.5"/>
+            <point key="canvasLocation" x="86" y="452.5"/>
         </view>
     </objects>
 </document>

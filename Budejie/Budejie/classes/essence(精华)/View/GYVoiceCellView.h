@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GYTopicModel;
+
 @interface GYVoiceCellView : UIView
+
+@property(nonatomic,strong)GYTopicModel *model;
 
 @end

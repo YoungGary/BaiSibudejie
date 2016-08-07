@@ -214,9 +214,9 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"a"] = @"list";
     param[@"c"] = @"data";
-    param[@"type"] = @"1";
+    param[@"type"] = @"31";
     [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [responseObject   writeToFile:@"/Users/young/Desktop/data.plist" atomically:YES];
+        //[responseObject   writeToFile:@"/Users/young/Desktop/data.plist" atomically:YES];
         NSArray *dicArr = responseObject[@"list"];
         
         self.maxtime = responseObject[@"info"][@"maxtime"];
@@ -239,7 +239,7 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     param[@"a"] = @"list";
     param[@"c"] = @"data";
-    param[@"type"] = @"1";
+    param[@"type"] = @"31";
     param[@"maxtime"] = self.maxtime;
     [manager GET:@"http://api.budejie.com/api/api_open.php" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.maxtime = responseObject[@"info"][@"maxtime"];

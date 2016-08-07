@@ -16,13 +16,26 @@
     if (_cellHeight) {
         return _cellHeight;
     }
-    _cellHeight += 55;//top
+    //top
+    _cellHeight += 55;
 //         CGSize size = [self.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(ScreenWidth-20, MAXFLOAT)];
 //        _cellHeight += size.height;
-         //text height
+    //text height
     _cellHeight += [self.text boundingRectWithSize:CGSizeMake(ScreenWidth-20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size.height;
-    _cellHeight += 10;//margin
-        //最热评论的高度
+    //margin
+    _cellHeight += 10;
+    //中间内容的高度
+    if(self.type!= TopicTypeWord){
+        CGFloat middleWidth = ScreenWidth - 2 * 10;
+        CGFloat middleHeight =middleWidth * self.height/self.width;
+        CGFloat middleX = 10;
+        CGFloat middleY = _cellHeight;
+        CGRect middleRect = CGRectMake(middleX, middleY, middleWidth, middleHeight);
+        self.middleFrame = middleRect;
+        _cellHeight += middleHeight +10;
+    }
+    
+    //最热评论的高度
     if(self.top_cmt.count){
        //标题高度
         _cellHeight += 21;
@@ -37,9 +50,10 @@
         _cellHeight += [cmtText boundingRectWithSize:CGSizeMake(ScreenWidth-20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} context:nil].size.height;
     }
     
-    
-    _cellHeight += 10;//margin
-    _cellHeight += 35;//bottom
+    //margin
+    _cellHeight += 10;
+    //bottom
+    _cellHeight += 35;
     
     
     return _cellHeight;

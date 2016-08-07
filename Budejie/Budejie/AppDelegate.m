@@ -21,6 +21,8 @@
     GYADViewController *ad = [[GYADViewController alloc]init];
     self.window.rootViewController  = ad;
     [self.window makeKeyAndVisible];
+    //根据网络状态监听
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     return YES;
 }
 
