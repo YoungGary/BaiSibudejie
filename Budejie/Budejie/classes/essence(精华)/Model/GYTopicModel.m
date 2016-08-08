@@ -28,6 +28,10 @@
     if(self.type!= TopicTypeWord){
         CGFloat middleWidth = ScreenWidth - 2 * 10;
         CGFloat middleHeight =middleWidth * self.height/self.width;
+        if(middleHeight >= ScreenHeight){//长图
+            middleHeight = 200;
+            self.bigPicture = YES;
+        }
         CGFloat middleX = 10;
         CGFloat middleY = _cellHeight;
         CGRect middleRect = CGRectMake(middleX, middleY, middleWidth, middleHeight);

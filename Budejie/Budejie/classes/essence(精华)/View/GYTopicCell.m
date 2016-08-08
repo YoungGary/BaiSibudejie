@@ -103,6 +103,8 @@
         self.pictureView.hidden = NO;
         self.voiceView.hidden = YES;
         self.videoView.hidden = YES;
+        //设置model
+        self.pictureView.model = model;
     }else if (model.type == TopicTypeVoice){//音频
         [self.contentView addSubview:self.voiceView];
         self.pictureView.hidden = YES;
@@ -116,6 +118,9 @@
         self.pictureView.hidden = YES;
         self.voiceView.hidden = YES;
         self.videoView.hidden = NO;
+        //设置model
+        self.videoView.model = model;
+        
     }else if (model.type == TopicTypeWord){
         self.pictureView.hidden = YES;
         self.voiceView.hidden = YES;

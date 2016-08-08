@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GYTopicModel;
 @interface GYVideoCellView : UIView
+
+
+@property(nonatomic,strong)GYTopicModel *model;
 
 @end

@@ -8,12 +8,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GYPictureCellView">
-            <rect key="frame" x="0.0" y="0.0" width="94" height="37"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="276"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="0.12245156729999999" blue="0.1204401863" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="29k-GC-kjS">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="276"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-sj-wNz">
+                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="4tm-NW-wXa"/>
+                        <constraint firstAttribute="width" constant="31" id="v6S-Rd-8Wn"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zE-1p-PbL">
+                    <rect key="frame" x="0.0" y="231" width="343" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="lrC-Xr-3vg"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="titleEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="点击查看大图" image="see-big-picture"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="29k-GC-kjS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Gb-Xd-0Fk"/>
+                <constraint firstAttribute="trailing" secondItem="6zE-1p-PbL" secondAttribute="trailing" id="LEe-pA-QhK"/>
+                <constraint firstItem="29k-GC-kjS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PSO-rB-LWi"/>
+                <constraint firstAttribute="bottom" secondItem="6zE-1p-PbL" secondAttribute="bottom" id="YvN-96-fVl"/>
+                <constraint firstItem="6zE-1p-PbL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bKj-9u-sM9"/>
+                <constraint firstAttribute="trailing" secondItem="29k-GC-kjS" secondAttribute="trailing" id="bd9-9Z-Ss6"/>
+                <constraint firstItem="pwG-sj-wNz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eGR-lf-itn"/>
+                <constraint firstItem="pwG-sj-wNz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRt-wF-WaR"/>
+                <constraint firstAttribute="bottom" secondItem="29k-GC-kjS" secondAttribute="bottom" id="xjn-xT-OX1"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="86" y="452.5"/>
+            <connections>
+                <outlet property="backgroundImage" destination="29k-GC-kjS" id="qCz-sq-wmV"/>
+                <outlet property="gifView" destination="pwG-sj-wNz" id="zCU-et-6Re"/>
+                <outlet property="seeBigPicture" destination="6zE-1p-PbL" id="nJX-bl-8g3"/>
+            </connections>
+            <point key="canvasLocation" x="302.5" y="382"/>
         </view>
     </objects>
+    <resources>
+        <image name="common-gif" width="31" height="31"/>
+        <image name="see-big-picture" width="19" height="19"/>
+    </resources>
 </document>
