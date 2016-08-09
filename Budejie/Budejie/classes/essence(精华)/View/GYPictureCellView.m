@@ -62,6 +62,15 @@
         self.seeBigPicture.hidden = NO;
         self.backgroundImage.contentMode = UIViewContentModeTop;
         self.backgroundImage.clipsToBounds = YES;
+        //处理sdwebimage显示的大图
+        if(self.backgroundImage){
+            CGFloat imageW = model.middleFrame.size.width;
+            CGFloat imageh = imageW *model.height/model.width;
+            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageh));
+            [self.backgroundImage.image drawInRect:CGRectMake(0, 0, imageW, imageh)];
+            self.backgroundImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
     }else{
         self.seeBigPicture.hidden = YES;
         self.backgroundImage.contentMode = UIViewContentModeScaleToFill;
