@@ -20,6 +20,8 @@
 		6F12308B1D5642F1006FCFA0 /* GYVoiceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F12308A1D5642F1006FCFA0 /* GYVoiceCellView.xib */; };
 		6F31D6921D53A44900DDAA20 /* GYTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F31D6901D53A44900DDAA20 /* GYTopicCell.m */; };
 		6F31D6931D53A44900DDAA20 /* GYTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */; };
+		6F5301D71D5B969B004C4650 /* GYSeeBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */; };
+		6F5301D81D5B969B004C4650 /* GYSeeBigImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */; };
 		6F5A2BAE1D3E9BE8009885CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A2BAD1D3E9BE8009885CA /* main.m */; };
 		6F5A2BB11D3E9BE8009885CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A2BB01D3E9BE8009885CA /* AppDelegate.m */; };
 		6F5A2BB91D3E9BE8009885CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F5A2BB81D3E9BE8009885CA /* Assets.xcassets */; };
@@ -103,6 +105,9 @@
 		6F31D68F1D53A44900DDAA20 /* GYTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTopicCell.h; sourceTree = "<group>"; };
 		6F31D6901D53A44900DDAA20 /* GYTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTopicCell.m; sourceTree = "<group>"; };
 		6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYTopicCell.xib; sourceTree = "<group>"; };
+		6F5301D41D5B969B004C4650 /* GYSeeBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSeeBigImageViewController.h; sourceTree = "<group>"; };
+		6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSeeBigImageViewController.m; sourceTree = "<group>"; };
+		6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSeeBigImageViewController.xib; sourceTree = "<group>"; };
 		6F5A2BA91D3E9BE8009885CA /* Budejie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budejie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5A2BAD1D3E9BE8009885CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F5A2BAF1D3E9BE8009885CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -291,6 +296,9 @@
 				6F0BF1BE1D4E0C76003988D2 /* GYPictureViewController.m */,
 				6F0BF1C01D4E0C84003988D2 /* GYWordViewController.h */,
 				6F0BF1C11D4E0C84003988D2 /* GYWordViewController.m */,
+				6F5301D41D5B969B004C4650 /* GYSeeBigImageViewController.h */,
+				6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */,
+				6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -721,6 +729,7 @@
 				6FAB9E901D49268C006CBC3D /* GYCollectionViewCell.xib in Resources */,
 				6F96DF851D428F7B0022F07A /* LaunchImage.png in Resources */,
 				6FAB9E881D492291006CBC3D /* GYMeViewController.storyboard in Resources */,
+				6F5301D81D5B969B004C4650 /* GYSeeBigImageViewController.xib in Resources */,
 				6F5A2BB91D3E9BE8009885CA /* Assets.xcassets in Resources */,
 				6F96DF821D428F7B0022F07A /* LaunchImage-700@2x.png in Resources */,
 				6FF3CAF41D47D5F400F35AF8 /* GYFastLoginView.xib in Resources */,
@@ -818,6 +827,7 @@
 				6F0BF1B61D4E0C43003988D2 /* GYAllViewController.m in Sources */,
 				6FF3CAF71D47DBA100F35AF8 /* GYLoginButton.m in Sources */,
 				6F88B7211D3FE3C0002EF6C1 /* GYEssenceController.m in Sources */,
+				6F5301D71D5B969B004C4650 /* GYSeeBigImageViewController.m in Sources */,
 				6F88B71B1D3FE2B1002EF6C1 /* GYTabbarController.m in Sources */,
 				6FCE9E681D467E7C00F2BC0D /* GYLoginViewController.m in Sources */,
 				6FE729E81D41388100AB155C /* UIBarButtonItem+Extension.m in Sources */,

@@ -12,6 +12,7 @@
 #import <AFNetworking.h>
 #import <MJExtension/MJExtension.h>
 #import "SVProgressHUD.h"
+#import <SDImageCache.h>
 
 #import "GYTopicCell.h"
 
@@ -164,6 +165,8 @@
     [self dealWithHeaderView];
     
     [self dealwithFooterView];
+    
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 

@@ -7,6 +7,8 @@
 //
 
 #import "GYPictureCellView.h"
+#import "GYSeeBigImageViewController.h"
+
 #import <AFNetWorking.h>
 #import <UIImageView+WebCache.h>
 #import "GYTopicModel.h"
@@ -24,7 +26,18 @@
 -(void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;
     
+    self.backgroundImage.userInteractionEnabled =YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(seeBigPictures)];
+    [self.backgroundImage addGestureRecognizer:tap];
+    
 }
+
+- (void)seeBigPictures{
+    GYSeeBigImageViewController *big = [[GYSeeBigImageViewController alloc]init];
+    [self.window.rootViewController presentViewController:big animated:YES completion:nil];
+}
+
+
 
 -(void)setModel:(GYTopicModel *)model{
     _model=  model;
