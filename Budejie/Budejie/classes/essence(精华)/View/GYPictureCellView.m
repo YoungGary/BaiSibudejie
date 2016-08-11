@@ -34,6 +34,7 @@
 
 - (void)seeBigPictures{
     GYSeeBigImageViewController *big = [[GYSeeBigImageViewController alloc]init];
+    big.model = self.model;
     [self.window.rootViewController presentViewController:big animated:YES completion:nil];
 }
 

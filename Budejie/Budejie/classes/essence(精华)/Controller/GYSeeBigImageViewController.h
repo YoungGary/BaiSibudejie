@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GYTopicModel;
 @interface GYSeeBigImageViewController : UIViewController
+
+
+@property(nonatomic,strong)GYTopicModel *model;
 
 @end
