@@ -48,7 +48,8 @@
     UIImage *bigImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:model.image1];//从缓存路径中取下载好的大图
     
     if (bigImage) {//如果有大图 则直接赋值
-        self.backgroundImage.image = bigImage;
+        //self.backgroundImage.image = bigImage;
+        [self.backgroundImage sd_setImageWithURL:[NSURL URLWithString:model.image1]];
     }else{//如果没有
         if (manager.isReachableViaWiFi) {//WiFi状态则下载大图1
             [self.backgroundImage sd_setImageWithURL:[NSURL URLWithString:model.image1]];
@@ -57,7 +58,8 @@
         }else{//没有可用网络
             UIImage *small = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:model.image0];//从缓存路径中取下载好的小1图
             if (small) {//如果有小图 则赋值小图
-                self.backgroundImage.image = small;
+               // self.backgroundImage.image = small;
+              [self.backgroundImage sd_setImageWithURL:[NSURL URLWithString:model.image0]];
             }else{//没有小图 则为空
                 self.backgroundImage.image = nil;
             }

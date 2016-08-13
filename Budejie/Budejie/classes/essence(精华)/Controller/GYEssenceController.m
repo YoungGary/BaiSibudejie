@@ -54,12 +54,25 @@
 }
 
 -(void)setupChildVC{
+    GYAllViewController *all =  [[GYAllViewController alloc]init];
+    // all.type = TopicTypeAll;
+    [self addChildViewController:all];
     
-    [self addChildViewController:[[GYAllViewController alloc]init]];
-    [self addChildViewController:[[GYVideoViewController alloc]init]];
-    [self addChildViewController:[[GYVoiceViewController alloc]init]];
-    [self addChildViewController:[[GYPictureViewController alloc]init]];
-    [self addChildViewController:[[GYWordViewController alloc]init]];
+    GYVideoViewController *video =  [[GYVideoViewController alloc]init];
+  //  video.type = TopicTypeVideo;
+    [self addChildViewController:video];
+    
+    GYVoiceViewController *voice =  [[GYVoiceViewController alloc]init];
+   // voice.type = TopicTypeVoice;
+    [self addChildViewController:voice];
+    
+    GYPictureViewController * picture = [[GYPictureViewController alloc]init];
+    //picture.type = TopicTypePicture;
+    [self addChildViewController:picture];
+    
+    GYWordViewController *word =  [[GYWordViewController alloc]init];
+   // word.type = TopicTypeWord;
+    [self addChildViewController:word];
 
 }
 

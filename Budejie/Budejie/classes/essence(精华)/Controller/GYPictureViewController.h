@@ -6,8 +6,9 @@
 //  Copyright © 2016年 Young. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface GYPictureViewController : UITableViewController
+#import "GYBaseTableViewController.h"
+
+@interface GYPictureViewController : GYBaseTableViewController
 
 @end

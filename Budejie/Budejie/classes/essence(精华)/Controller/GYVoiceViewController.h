@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Young. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GYBaseTableViewController.h"
 
-@interface GYVoiceViewController : UITableViewController
+@interface GYVoiceViewController : GYBaseTableViewController
 
 @end

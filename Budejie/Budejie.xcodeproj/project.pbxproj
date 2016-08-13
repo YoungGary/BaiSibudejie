@@ -20,6 +20,7 @@
 		6F12308B1D5642F1006FCFA0 /* GYVoiceCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F12308A1D5642F1006FCFA0 /* GYVoiceCellView.xib */; };
 		6F31D6921D53A44900DDAA20 /* GYTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F31D6901D53A44900DDAA20 /* GYTopicCell.m */; };
 		6F31D6931D53A44900DDAA20 /* GYTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */; };
+		6F508EEB1D5EFBB700043DDA /* GYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F508EEA1D5EFBB700043DDA /* GYBaseTableViewController.m */; };
 		6F5301D71D5B969B004C4650 /* GYSeeBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */; };
 		6F5301D81D5B969B004C4650 /* GYSeeBigImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */; };
 		6F5A2BAE1D3E9BE8009885CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A2BAD1D3E9BE8009885CA /* main.m */; };
@@ -105,6 +106,8 @@
 		6F31D68F1D53A44900DDAA20 /* GYTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYTopicCell.h; sourceTree = "<group>"; };
 		6F31D6901D53A44900DDAA20 /* GYTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYTopicCell.m; sourceTree = "<group>"; };
 		6F31D6911D53A44900DDAA20 /* GYTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYTopicCell.xib; sourceTree = "<group>"; };
+		6F508EE91D5EFBB700043DDA /* GYBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYBaseTableViewController.h; sourceTree = "<group>"; };
+		6F508EEA1D5EFBB700043DDA /* GYBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYBaseTableViewController.m; sourceTree = "<group>"; };
 		6F5301D41D5B969B004C4650 /* GYSeeBigImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYSeeBigImageViewController.h; sourceTree = "<group>"; };
 		6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYSeeBigImageViewController.m; sourceTree = "<group>"; };
 		6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GYSeeBigImageViewController.xib; sourceTree = "<group>"; };
@@ -206,6 +209,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F508EE81D5EFB6100043DDA /* childVCs */ = {
+			isa = PBXGroup;
+			children = (
+				6F0BF1B41D4E0C43003988D2 /* GYAllViewController.h */,
+				6F0BF1B51D4E0C43003988D2 /* GYAllViewController.m */,
+				6F0BF1B71D4E0C53003988D2 /* GYVideoViewController.h */,
+				6F0BF1B81D4E0C53003988D2 /* GYVideoViewController.m */,
+				6F0BF1BA1D4E0C60003988D2 /* GYVoiceViewController.h */,
+				6F0BF1BB1D4E0C60003988D2 /* GYVoiceViewController.m */,
+				6F0BF1BD1D4E0C76003988D2 /* GYPictureViewController.h */,
+				6F0BF1BE1D4E0C76003988D2 /* GYPictureViewController.m */,
+				6F0BF1C01D4E0C84003988D2 /* GYWordViewController.h */,
+				6F0BF1C11D4E0C84003988D2 /* GYWordViewController.m */,
+			);
+			name = childVCs;
+			sourceTree = "<group>";
+		};
 		6F5A2BA01D3E9BE8009885CA = {
 			isa = PBXGroup;
 			children = (
@@ -286,19 +306,12 @@
 			children = (
 				6F88B71F1D3FE3C0002EF6C1 /* GYEssenceController.h */,
 				6F88B7201D3FE3C0002EF6C1 /* GYEssenceController.m */,
-				6F0BF1B41D4E0C43003988D2 /* GYAllViewController.h */,
-				6F0BF1B51D4E0C43003988D2 /* GYAllViewController.m */,
-				6F0BF1B71D4E0C53003988D2 /* GYVideoViewController.h */,
-				6F0BF1B81D4E0C53003988D2 /* GYVideoViewController.m */,
-				6F0BF1BA1D4E0C60003988D2 /* GYVoiceViewController.h */,
-				6F0BF1BB1D4E0C60003988D2 /* GYVoiceViewController.m */,
-				6F0BF1BD1D4E0C76003988D2 /* GYPictureViewController.h */,
-				6F0BF1BE1D4E0C76003988D2 /* GYPictureViewController.m */,
-				6F0BF1C01D4E0C84003988D2 /* GYWordViewController.h */,
-				6F0BF1C11D4E0C84003988D2 /* GYWordViewController.m */,
 				6F5301D41D5B969B004C4650 /* GYSeeBigImageViewController.h */,
 				6F5301D51D5B969B004C4650 /* GYSeeBigImageViewController.m */,
 				6F5301D61D5B969B004C4650 /* GYSeeBigImageViewController.xib */,
+				6F508EE91D5EFBB700043DDA /* GYBaseTableViewController.h */,
+				6F508EEA1D5EFBB700043DDA /* GYBaseTableViewController.m */,
+				6F508EE81D5EFB6100043DDA /* childVCs */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -813,6 +826,7 @@
 				6F0BF1C21D4E0C84003988D2 /* GYWordViewController.m in Sources */,
 				6FE729E21D4129AE00AB155C /* UIView+Frame.m in Sources */,
 				6F88B72A1D3FE46B002EF6C1 /* GYMeViewController.m in Sources */,
+				6F508EEB1D5EFBB700043DDA /* GYBaseTableViewController.m in Sources */,
 				6F88B7361D3FE75A002EF6C1 /* UIImage+Image.m in Sources */,
 				6F5A2BB11D3E9BE8009885CA /* AppDelegate.m in Sources */,
 				6F659CFB1D4511780099D760 /* GYSubTagModel.m in Sources */,
